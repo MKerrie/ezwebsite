@@ -1,47 +1,44 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useSpring, useMotionValue } from 'framer-motion';
 
 const CursorEffects: React.FC = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const glowRef = useRef<HTMLDivElement>(null);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
-  
-  // Adjusted for a premium "trailing" feel:
+
   const springConfig = { damping: 20, stiffness: 250 };
-  
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    let rafId: number;
+
     const moveCursor = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
       cursorX.set(e.clientX - 16);
       cursorY.set(e.clientY - 16);
+
+      // Update glow directly via DOM to avoid re-renders
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        if (glowRef.current) {
+          glowRef.current.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
+        }
+      });
     };
 
-    window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mousemove', moveCursor, { passive: true });
     return () => {
       window.removeEventListener('mousemove', moveCursor);
+      cancelAnimationFrame(rafId);
     };
   }, [cursorX, cursorY]);
 
   return (
     <>
-      {/* Large Ambient Glow acting as a flashlight */}
-      <div 
-        className="fixed inset-0 z-0 pointer-events-none transition-opacity duration-300"
-        style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`
-        }}
-      />
-
-      {/* Small precision follower ring */}
+      <div ref={glowRef} className="fixed inset-0 z-0 pointer-events-none" />
       <motion.div
         className="fixed top-0 left-0 w-8 h-8 border border-black/20 dark:border-white/30 rounded-full pointer-events-none z-[60] mix-blend-difference hidden md:block"
-        style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
-        }}
+        style={{ x: cursorXSpring, y: cursorYSpring }}
       />
     </>
   );

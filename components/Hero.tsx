@@ -17,7 +17,7 @@ const ParticleCanvas = () => {
     let height = canvas.height = window.innerHeight;
     
     const particles: { x: number; y: number; vx: number; vy: number; size: number; alpha: number }[] = [];
-    const particleCount = window.innerWidth < 768 ? 30 : 80; // Fewer particles on mobile for performance
+    const particleCount = window.innerWidth < 768 ? 0 : 40; // Disabled on mobile, reduced on desktop
     
     // Mouse state
     let mouseX = -1000;
@@ -151,9 +151,9 @@ const Hero: React.FC = () => {
   const backgroundX = useTransform(mouseX, [-0.5, 0.5], [50, -50]);
   const backgroundY = useTransform(mouseY, [-0.5, 0.5], [50, -50]);
 
-  const smoothProgress = useSpring(scrollYProgress, { 
-    stiffness: 30, 
-    damping: 15
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 25
   });
 
   // Scroll Parallax effects
