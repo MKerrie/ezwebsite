@@ -155,16 +155,13 @@ const ProjectDetail: React.FC = () => {
                       <ArrowUpRight className="w-4 h-4" />
                     </a>
                   </div>
-                  <div className="relative h-64 md:h-96 overflow-hidden bg-slate-50 dark:bg-neutral-900 group cursor-pointer">
-                    <img
-                      src={images[0]}
-                      alt={`${project.title} website`}
-                      className="w-full h-auto object-cover object-top transition-transform duration-[4000ms] ease-in-out group-hover:translate-y-[-50%]"
+                  <div className="relative h-[500px] md:h-[650px] bg-slate-50 dark:bg-neutral-900">
+                    <iframe
+                      src={project.url}
+                      title={`${project.title} live preview`}
+                      className="w-full h-full border-0"
+                      loading="lazy"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-slate-50 dark:from-neutral-900 to-transparent pointer-events-none" />
-                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[9px] uppercase tracking-widest text-slate-400 dark:text-white/30 font-bold group-hover:opacity-0 transition-opacity">
-                      Hover om te scrollen
-                    </div>
                   </div>
                 </div>
               </div>
