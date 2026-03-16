@@ -37,6 +37,7 @@ export const projects: Project[] = [
       "Dark-first design voor minimale oogvermoeidheid",
       "Exporteer rapporten in PDF, CSV en Excel"
     ],
+    url: "https://kingairconditioning.nl/",
     images: [
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
@@ -57,6 +58,7 @@ export const projects: Project[] = [
       "Geïntegreerde boekings- en betalingsflow via Stripe",
       "SEO-geoptimaliseerde statische pagina's via Next.js SSG"
     ],
+    url: "https://piccobellosnacks.nl/",
     images: [
       "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop",

@@ -212,11 +212,24 @@ const ProjectDetail: React.FC = () => {
                 </div>
               </div>
               {/* iframe */}
-              <div className="relative w-full" style={{ height: '80vh' }}>
+              <div
+                className="live-preview-wrap relative w-full overflow-auto"
+                style={{
+                  height: '80vh',
+                  scrollbarWidth: 'thin',
+                  scrollbarColor: '#2563eb #0f172a',
+                }}
+              >
+                <style>{`
+                  .live-preview-wrap::-webkit-scrollbar { width: 6px; height: 6px; }
+                  .live-preview-wrap::-webkit-scrollbar-track { background: #0f172a; }
+                  .live-preview-wrap::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 999px; }
+                  .live-preview-wrap::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+                `}</style>
                 <iframe
                   src={project.url}
                   title={`${project.title} live preview`}
-                  className="absolute inset-0 w-full h-full border-0"
+                  className="w-full h-full border-0"
                   loading="lazy"
                   scrolling="yes"
                 />
