@@ -136,36 +136,6 @@ const ProjectDetail: React.FC = () => {
                 </span>
               ))}
             </div>
-
-            {/* Site preview */}
-            {project.url && (
-              <div className="mb-12">
-                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-600 block mb-4">Live Site</span>
-                <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl">
-                  <div className="flex items-center gap-2 px-4 py-3 bg-slate-100 dark:bg-white/5 border-b border-slate-200 dark:border-white/10">
-                    <div className="flex gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-red-400/80" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
-                      <div className="w-3 h-3 rounded-full bg-green-400/80" />
-                    </div>
-                    <div className="flex-1 bg-white dark:bg-white/10 rounded-md px-3 py-1 text-[11px] font-mono text-slate-500 dark:text-white/40 truncate">
-                      {project.url.replace('https://', '')}
-                    </div>
-                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
-                      <ArrowUpRight className="w-4 h-4" />
-                    </a>
-                  </div>
-                  <div className="relative h-[500px] md:h-[650px] bg-slate-50 dark:bg-neutral-900">
-                    <iframe
-                      src={project.url}
-                      title={`${project.title} live preview`}
-                      className="w-full h-full border-0"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
 
           {/* Right column — highlights + CTA */}
@@ -214,6 +184,46 @@ const ProjectDetail: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Live Site Preview — full width */}
+        {project.url && (
+          <div className="mt-16 md:mt-24">
+            <div className="flex items-center justify-between mb-6">
+              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-600">Live Site</span>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-white/40 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
+              >
+                Openen in nieuw tabblad <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl">
+              {/* Browser chrome */}
+              <div className="flex items-center gap-2 px-4 py-3 bg-slate-100 dark:bg-white/5 border-b border-slate-200 dark:border-white/10">
+                <div className="flex gap-1.5 shrink-0">
+                  <div className="w-3 h-3 rounded-full bg-red-400/80" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
+                  <div className="w-3 h-3 rounded-full bg-green-400/80" />
+                </div>
+                <div className="flex-1 bg-white dark:bg-white/10 rounded-md px-3 py-1.5 text-[11px] font-mono text-slate-500 dark:text-white/40 truncate">
+                  {project.url.replace('https://', '')}
+                </div>
+              </div>
+              {/* iframe */}
+              <div className="relative w-full" style={{ height: '80vh' }}>
+                <iframe
+                  src={project.url}
+                  title={`${project.title} live preview`}
+                  className="absolute inset-0 w-full h-full border-0"
+                  loading="lazy"
+                  scrolling="yes"
+                />
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Next/Prev project navigation */}
         <div className="border-t border-slate-200 dark:border-white/10 mt-16 pt-12 grid grid-cols-2 gap-6">
