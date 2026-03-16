@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brand_gradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563eb" /> <!-- Brand Blue -->
+      <stop offset="1" stop-color="#7c3aed" /> <!-- Brand Purple -->
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Shape: Rounded Squircle (Modern App Icon Style) -->
+  <rect x="0" y="0" width="512" height="512" rx="128" fill="url(#brand_gradient)" />
+  
+  <!-- 
+    EZ Monogram 
+    Designed for maximum legibility at 16x16px and 32x32px.
+    Geometric, bold, white.
+  -->
+  <g transform="translate(86, 156)" fill="white">
+     <!-- Letter E -->
+     <!-- Vertical Spine -->
+     <path d="M0 0 H140 V45 H45 V77.5 H130 V122.5 H45 V155 H140 V200 H0 V0 Z" />
+     
+     <!-- Letter Z -->
+     <!-- Top Bar, Diagonal, Bottom Bar -->
+     <path d="M200 0 H340 V45 L255 155 H340 V200 H200 V155 L285 45 H200 V0 Z" />
+  </g>
+  
+  <!-- Subtle Inner Stroke for 'Glass' Effect/Finish -->
+  <rect x="24" y="24" width="464" height="464" rx="110" stroke="white" stroke-opacity="0.15" stroke-width="12" fill="none" />
+</svg>
