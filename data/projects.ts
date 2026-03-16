@@ -27,7 +27,7 @@ export const projects: Project[] = [
     id: 2,
     title: "King Airco",
     category: "Webdesign",
-    image: "https://images.unsplash.com/photo-1631545806609-f85f4b10e7e0?q=80&w=2069&auto=format&fit=crop",
+    image: "https://kingairconditioning.nl/media/Herosection1.png",
     description: "Professionele website voor een gespecialiseerd airconditioning installatiebedrijf.",
     year: "2024",
     tags: ["Webdesign", "WordPress", "SEO", "Branding"],
@@ -39,16 +39,14 @@ export const projects: Project[] = [
     ],
     url: "https://kingairconditioning.nl/",
     images: [
-      "https://images.unsplash.com/photo-1631545806609-f85f4b10e7e0?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop",
+      "https://kingairconditioning.nl/media/Herosection1.png",
     ]
   },
   {
     id: 3,
     title: "Piccobello",
     category: "Webdesign",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop",
+    image: "https://piccobellosnacks.nl/assets/images/foodtruck-snacks.jpg",
     description: "Smaakvolle website voor een authentiek snacks- en cateringbedrijf.",
     year: "2024",
     tags: ["Webdesign", "WordPress", "SEO", "E-commerce"],
@@ -60,9 +58,11 @@ export const projects: Project[] = [
     ],
     url: "https://piccobellosnacks.nl/",
     images: [
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2074&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop",
+      "https://piccobellosnacks.nl/assets/images/foodtruck-snacks.jpg",
+      "https://piccobellosnacks.nl/assets/images/truck-exterior.jpg",
+      "https://piccobellosnacks.nl/assets/images/truck-sfeer.jpg",
+      "https://piccobellosnacks.nl/assets/images/truck-balie.jpg",
+      "https://piccobellosnacks.nl/assets/images/rotterdam-skyline.jpg",
     ]
   },
   {
