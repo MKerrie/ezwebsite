@@ -48,7 +48,7 @@ export const projects: Project[] = [
     id: 3,
     title: "Piccobello",
     category: "Webdesign",
-    image: "/ezwebsite/images/piccobello/truck-exterior.jpg",
+    image: "/ezwebsite/images/piccobello/rotterdam-skyline.jpg",
     description: "Smaakvolle website voor een authentiek snacks- en cateringbedrijf.",
     year: "2024",
     tags: ["Webdesign", "WordPress", "SEO", "E-commerce"],
@@ -62,11 +62,11 @@ export const projects: Project[] = [
     canEmbed: false,
     screenshot: "https://www.mkerrie.com/assets/images/piccobello-full.webp",
     images: [
+      "/ezwebsite/images/piccobello/rotterdam-skyline.jpg",
       "/ezwebsite/images/piccobello/truck-exterior.jpg",
       "/ezwebsite/images/piccobello/foodtruck-snacks.jpg",
       "/ezwebsite/images/piccobello/truck-sfeer.jpg",
       "/ezwebsite/images/piccobello/truck-balie.jpg",
-      "/ezwebsite/images/piccobello/rotterdam-skyline.jpg",
     ]
   },
   {
