@@ -41,7 +41,7 @@ export const projects: Project[] = [
     images: [
       "/ezwebsite/images/king-room-1.png",
       "/ezwebsite/images/king-buitenunit.webp",
-      "/ezwebsite/images/king-woonkamer.webp",
+      "/ezwebsite/images/king-installatie-1.webp",
     ]
   },
   {

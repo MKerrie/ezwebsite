@@ -42,20 +42,26 @@ const ProjectDetail: React.FC = () => {
       </div>
 
       {/* Hero image */}
-      <div className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden">
+      <div className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden bg-black">
+        {/* Blurred background */}
+        <img
+          src={images[activeImg]}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-40"
+        />
         <AnimatePresence mode="wait">
           <motion.img
             key={activeImg}
             src={images[activeImg]}
             alt={project.title}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="absolute inset-0 w-full h-full object-cover"
+            transition={{ duration: 0.4 }}
+            className="absolute inset-0 w-full h-full object-contain"
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#020202] via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#020202] via-transparent to-transparent" />
 
         {/* Prev/Next arrows */}
         {images.length > 1 && (
