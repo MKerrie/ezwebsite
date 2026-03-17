@@ -41,6 +41,9 @@ export const projects: Project[] = [
     images: [
       "https://api.microlink.io/?url=https://kingairconditioning.nl&screenshot=true&meta=false&embed=screenshot.url",
       "https://kingairconditioning.nl/media/Herosection1.png",
+      "https://www.feenstra.com/assets/Airco/Impressie-fotos/Airco-woonkamer__FocusFillWyIwLjExIiwiLTAuMzkiLDE5MjAsNDIwXQ.jpg",
+      "https://www.feenstra.com/assets/Airco/Impressie-fotos/Daikin-airco__FocusFillWyIwLjI0IiwiLTAuMjUiLDE5MjAsNTUwXQ.jpg",
+      "https://www.feenstra.com/assets/Monteurs/Feenstra-vakmannen__ScaleMaxWidthWzcyMF0.jpg",
     ]
   },
   {
@@ -58,6 +61,7 @@ export const projects: Project[] = [
       "Mobielvriendelijk ontwerp afgestemd op het merkidentiteit"
     ],
     url: "https://piccobellosnacks.nl/",
+    canEmbed: false,
     images: [
       "https://piccobellosnacks.nl/assets/images/foodtruck-snacks.jpg",
       "https://piccobellosnacks.nl/assets/images/truck-exterior.jpg",
