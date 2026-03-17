@@ -29,7 +29,7 @@ const ProjectCardMobile: React.FC<{ project: (typeof projects)[0] }> = ({ projec
           style={{ scale: imgScale, y: yParallax }}
           src={project.image}
           alt={project.title}
-          className="absolute inset-0 w-full h-[115%] object-cover grayscale-[0.3] dark:grayscale-[0.5]"
+          className="absolute inset-0 w-full h-[115%] object-cover object-top grayscale-[0.3] dark:grayscale-[0.5]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
@@ -118,7 +118,7 @@ const Projects: React.FC = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all" />
                 </div>
