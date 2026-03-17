@@ -27,7 +27,7 @@ export const projects: Project[] = [
     id: 2,
     title: "King Airco",
     category: "Webdesign",
-    image: "https://kingairconditioning.nl/media/Herosection1.png",
+    image: "https://api.microlink.io/?url=https://kingairconditioning.nl&screenshot=true&meta=false&embed=screenshot.url",
     description: "Professionele website voor een gespecialiseerd airconditioning installatiebedrijf.",
     year: "2024",
     tags: ["Webdesign", "WordPress", "SEO", "Branding"],
@@ -39,6 +39,7 @@ export const projects: Project[] = [
     ],
     url: "https://kingairconditioning.nl/",
     images: [
+      "https://api.microlink.io/?url=https://kingairconditioning.nl&screenshot=true&meta=false&embed=screenshot.url",
       "https://kingairconditioning.nl/media/Herosection1.png",
     ]
   },
@@ -57,7 +58,6 @@ export const projects: Project[] = [
       "Mobielvriendelijk ontwerp afgestemd op het merkidentiteit"
     ],
     url: "https://piccobellosnacks.nl/",
-    canEmbed: false,
     images: [
       "https://piccobellosnacks.nl/assets/images/foodtruck-snacks.jpg",
       "https://piccobellosnacks.nl/assets/images/truck-exterior.jpg",
