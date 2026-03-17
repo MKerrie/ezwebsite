@@ -227,23 +227,20 @@ const ProjectDetail: React.FC = () => {
                   .live-preview-wrap::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
                 `}</style>
                 {project.canEmbed === false ? (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative block w-full h-full"
-                  >
-                    <img
-                      src={`https://api.microlink.io/?url=${project.url}&screenshot=true&meta=false&embed=screenshot.url`}
-                      alt={`${project.title} screenshot`}
-                      className="w-full h-full object-cover object-top"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white text-sm font-bold uppercase tracking-widest">
-                        Bezoek site <ArrowUpRight className="w-4 h-4" />
-                      </span>
-                    </div>
-                  </a>
+                  <div className="relative w-full h-full overflow-y-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: '#2563eb #0f172a' }}>
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="group block">
+                      <img
+                        src={project.screenshot ?? `https://api.microlink.io/?url=${project.url}&screenshot=true&meta=false&embed=screenshot.url`}
+                        alt={`${project.title} screenshot`}
+                        className="w-full"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white text-sm font-bold uppercase tracking-widest">
+                          Bezoek site <ArrowUpRight className="w-4 h-4" />
+                        </span>
+                      </div>
+                    </a>
+                  </div>
                 ) : (
                   <iframe
                     src={project.url}

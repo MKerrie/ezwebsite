@@ -12,6 +12,7 @@ export interface Project {
   highlights: string[];
   url?: string;
   canEmbed?: boolean;
+  screenshot?: string;
   images?: string[];
 }
 
