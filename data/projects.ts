@@ -27,7 +27,7 @@ export const projects: Project[] = [
     id: 2,
     title: "King Airco",
     category: "Webdesign",
-    image: "https://www.airco-inside.nl/includes/_Files/resized/webshop/algemeen/Binnendeel-SRK-650.webp",
+    image: "/ezwebsite/images/king-woonkamer.webp",
     description: "Professionele website voor een gespecialiseerd airconditioning installatiebedrijf.",
     year: "2024",
     tags: ["Webdesign", "WordPress", "SEO", "Branding"],
@@ -39,10 +39,10 @@ export const projects: Project[] = [
     ],
     url: "https://kingairconditioning.nl/",
     images: [
-      "https://www.airco-inside.nl/includes/_Files/resized/webshop/algemeen/Binnendeel-SRK-650.webp",
-      "https://www.airco-inside.nl/includes/_Files/resized/webshop/algemeen/20240125_123543-650.webp",
-      "https://www.airco-inside.nl/includes/_Files/resized/webshop/algemeen/20240125_123547-650.webp",
-      "https://www.airco-inside.nl/includes/_Files/resized/webshop/algemeen/20230403_113417-kopie-650.webp",
+      "/ezwebsite/images/king-woonkamer.webp",
+      "/ezwebsite/images/king-installatie-1.webp",
+      "/ezwebsite/images/king-installatie-2.webp",
+      "/ezwebsite/images/king-buitenunit.webp",
     ]
   },
   {
