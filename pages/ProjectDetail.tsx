@@ -227,17 +227,23 @@ const ProjectDetail: React.FC = () => {
                   .live-preview-wrap::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
                 `}</style>
                 {project.canEmbed === false ? (
-                  <div className="w-full h-full flex flex-col items-center justify-center gap-6 bg-slate-50 dark:bg-neutral-900">
-                    <p className="text-slate-500 dark:text-white/40 text-sm font-medium">Deze site kan niet worden ingebed.</p>
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white text-sm font-bold uppercase tracking-widest hover:bg-blue-700 transition-colors"
-                    >
-                      Openen in nieuw tabblad <ArrowUpRight className="w-4 h-4" />
-                    </a>
-                  </div>
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative block w-full h-full"
+                  >
+                    <img
+                      src={`https://api.microlink.io/?url=${project.url}&screenshot=true&meta=false&embed=screenshot.url`}
+                      alt={`${project.title} screenshot`}
+                      className="w-full h-full object-cover object-top"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white text-sm font-bold uppercase tracking-widest">
+                        Bezoek site <ArrowUpRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </a>
                 ) : (
                   <iframe
                     src={project.url}
