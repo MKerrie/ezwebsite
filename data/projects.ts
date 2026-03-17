@@ -27,7 +27,7 @@ export const projects: Project[] = [
     id: 2,
     title: "King Airco",
     category: "Webdesign",
-    image: "/ezwebsite/images/king-woonkamer.webp",
+    image: "/ezwebsite/images/king-room-1.png",
     description: "Professionele website voor een gespecialiseerd airconditioning installatiebedrijf.",
     year: "2024",
     tags: ["Webdesign", "WordPress", "SEO", "Branding"],
@@ -39,10 +39,9 @@ export const projects: Project[] = [
     ],
     url: "https://kingairconditioning.nl/",
     images: [
-      "/ezwebsite/images/king-woonkamer.webp",
-      "/ezwebsite/images/king-installatie-1.webp",
-      "/ezwebsite/images/king-installatie-2.webp",
-      "/ezwebsite/images/king-buitenunit.webp",
+      "/ezwebsite/images/king-room-1.png",
+      "/ezwebsite/images/king-room-2.png",
+      "/ezwebsite/images/king-room-3.png",
     ]
   },
   {
