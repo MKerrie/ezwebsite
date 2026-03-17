@@ -57,6 +57,7 @@ export const projects: Project[] = [
       "Mobielvriendelijk ontwerp afgestemd op het merkidentiteit"
     ],
     url: "https://piccobellosnacks.nl/",
+    canEmbed: false,
     images: [
       "https://piccobellosnacks.nl/assets/images/foodtruck-snacks.jpg",
       "https://piccobellosnacks.nl/assets/images/truck-exterior.jpg",

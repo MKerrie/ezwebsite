@@ -226,13 +226,27 @@ const ProjectDetail: React.FC = () => {
                   .live-preview-wrap::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 999px; }
                   .live-preview-wrap::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
                 `}</style>
-                <iframe
-                  src={project.url}
-                  title={`${project.title} live preview`}
-                  className="w-full h-full border-0"
-                  loading="lazy"
-                  scrolling="yes"
-                />
+                {project.canEmbed === false ? (
+                  <div className="w-full h-full flex flex-col items-center justify-center gap-6 bg-slate-50 dark:bg-neutral-900">
+                    <p className="text-slate-500 dark:text-white/40 text-sm font-medium">Deze site kan niet worden ingebed.</p>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 text-white text-sm font-bold uppercase tracking-widest hover:bg-blue-700 transition-colors"
+                    >
+                      Openen in nieuw tabblad <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                ) : (
+                  <iframe
+                    src={project.url}
+                    title={`${project.title} live preview`}
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                    scrolling="yes"
+                  />
+                )}
               </div>
             </div>
           </div>

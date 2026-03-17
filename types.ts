@@ -11,6 +11,7 @@ export interface Project {
   longDescription: string;
   highlights: string[];
   url?: string;
+  canEmbed?: boolean;
   images?: string[];
 }
 
