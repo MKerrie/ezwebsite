@@ -40,8 +40,8 @@ export const projects: Project[] = [
     url: "https://kingairconditioning.nl/",
     images: [
       "/ezwebsite/images/king-room-1.png",
-      "/ezwebsite/images/king-room-2.png",
-      "/ezwebsite/images/king-room-3.png",
+      "/ezwebsite/images/king-woonkamer.webp",
+      "/ezwebsite/images/king-mhi-set.jpg",
     ]
   },
   {
