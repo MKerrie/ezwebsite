@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
             </p>
 
             <div className="space-y-8 md:space-y-10">
-              <a href="mailto:hello@ezwebsite.nl" className="flex items-center space-x-6 group cursor-pointer w-fit max-w-full">
+              <a href="mailto:info@ezwebsite.nl" className="flex items-center space-x-6 group cursor-pointer w-fit max-w-full">
                 <motion.div 
                   whileHover={{ rotate: 15, scale: 1.1 }}
                   className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 group-hover:bg-violet-600 group-hover:text-white group-hover:border-violet-600 transition-all duration-300 shadow-md"
@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
                 </motion.div>
                 <div className="overflow-hidden">
                   <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Email</p>
-                  <p className="font-display font-bold text-lg md:text-2xl group-hover:text-violet-500 transition-colors truncate">hello@ezwebsite.nl</p>
+                  <p className="font-display font-bold text-lg md:text-2xl group-hover:text-violet-500 transition-colors truncate">info@ezwebsite.nl</p>
                 </div>
               </a>
               

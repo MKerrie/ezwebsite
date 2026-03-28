@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
 
             <div>
               <h4 className="text-xs font-bold uppercase tracking-widest text-white/30 mb-6">Contact</h4>
-              <a href="mailto:hello@ezwebsite.nl" className="block text-white/60 hover:text-violet-400 transition-colors font-medium mb-2">hello@ezwebsite.nl</a>
+              <a href="mailto:info@ezwebsite.nl" className="block text-white/60 hover:text-violet-400 transition-colors font-medium mb-2">info@ezwebsite.nl</a>
               <a href="tel:+31612345678" className="block text-white/60 hover:text-violet-400 transition-colors font-medium mb-4">+31 6 1234 5678</a>
               <p className="text-white/30 text-sm">Amsterdam, Nederland</p>
             </div>
