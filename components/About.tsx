@@ -1,77 +1,111 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useSEO } from '../hooks/useSEO';
+import { Clock, Heart, Users, Zap } from 'lucide-react';
 
 const About: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
   useSEO(
     ref,
-    "Over Ons | ezwebsite - Creative Web Design Duo",
+    "Over Ons | ezwebsite - Creative Web Design Trio",
     "Meet the creative minds behind ezwebsite. Ahmad, Kerim and Nawdar are passionate about pixels, providing 24/7 availability and 100% satisfaction."
   );
 
   return (
-    <section id="about" ref={ref} className="py-20 md:py-24 bg-slate-100 text-slate-900 transition-colors duration-300 overflow-hidden">
+    <section id="about" ref={ref} className="py-24 md:py-32 bg-white text-slate-900 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-          
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:w-1/2 relative w-full"
-          >
-            {/* Creative Image Composition */}
-            <div className="relative group">
-              <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-full h-full border-2 border-slate-300 rounded-2xl z-0 transition-colors"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
-                alt="ezwebsite team working" 
-                className="rounded-2xl shadow-2xl relative z-10 w-full object-cover aspect-[4/3] filter grayscale hover:grayscale-0 transition-all duration-700"
-              />
-              {/* Floating Badge Mobile & Desktop */}
-              <div className="absolute -bottom-4 right-4 md:-bottom-8 md:-right-8 bg-violet-600 text-white p-4 md:p-8 rounded-2xl md:rounded-full flex items-center justify-center z-20 shadow-xl shadow-violet-900/20">
-                 <span className="font-display font-bold text-sm md:text-xl leading-none text-center">
-                   SINCE<br/>2024
-                 </span>
-              </div>
-            </div>
-          </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
+        {/* Section header */}
+        <div className="mb-16 md:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:w-1/2 w-full mt-4 md:mt-0"
           >
-            <span className="text-violet-600 font-bold tracking-widest uppercase mb-3 block text-xs md:text-base">Over Ons</span>
-            <h2 className="font-display font-bold text-5xl md:text-7xl uppercase leading-[0.9] mb-6 md:mb-8 break-words">
-              WIJ MAKEN HET <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-black">Eenvoudig.</span>
+            <span className="text-violet-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Over Ons</span>
+            <h2 className="font-display font-bold text-5xl md:text-8xl uppercase leading-[0.85] tracking-tighter">
+              Drie vrienden. <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600">Één missie.</span>
             </h2>
-            
-            <p className="text-lg md:text-3xl font-bold mb-6 md:mb-8 leading-tight text-slate-900">
-              WIJ ZIJN AHMAD, KERIM & NAWDAR. DRIE CREATIEVELINGEN MET EEN PASSIE VOOR PIXELS.
-            </p>
-            <p className="text-slate-600 text-sm md:text-lg mb-6 leading-relaxed">
-              Het internet verandert snel. Wat 5 jaar geleden werkte, kost je nu klanten. Wij zijn drie vrienden die webdesign anders aanpakken: geen logge bureaucratie, maar directe lijnen en pure creativiteit.
-            </p>
-            
-            {/* Mobile Stats Bar */}
-            <div className="grid grid-cols-2 gap-4 mt-8 bg-white p-4 rounded-2xl border border-slate-200">
-              <div className="text-center p-2">
-                <h4 className="font-display font-bold text-3xl md:text-4xl mb-1 text-violet-600">24/7</h4>
-                <p className="text-[10px] md:text-sm font-bold uppercase tracking-wider text-slate-500">Beschikbaarheid</p>
-              </div>
-              <div className="text-center p-2 border-l border-slate-100">
-                <h4 className="font-display font-bold text-3xl md:text-4xl mb-1 text-violet-600">100%</h4>
-                <p className="text-[10px] md:text-sm font-bold uppercase tracking-wider text-slate-500">Tevredenheid</p>
+          </motion.div>
+        </div>
+
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
+
+          {/* Main image - large card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="md:col-span-7 relative rounded-3xl overflow-hidden group"
+          >
+            <div className="aspect-[4/3] md:aspect-[16/10]">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                alt="ezwebsite team working"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20">
+                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-white text-xs font-bold uppercase tracking-widest">Team ezwebsite</span>
+                </div>
               </div>
             </div>
           </motion.div>
 
+          {/* Text card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="md:col-span-5 bg-slate-50 border border-slate-100 rounded-3xl p-8 md:p-10 flex flex-col justify-between"
+          >
+            <div>
+              <p className="text-2xl md:text-3xl font-bold leading-tight text-slate-900 mb-6">
+                Wij zijn Ahmad, Kerim & Nawdar.
+              </p>
+              <p className="text-slate-500 leading-relaxed">
+                Het internet verandert snel. Wat 5 jaar geleden werkte, kost je nu klanten. Wij zijn drie vrienden die webdesign anders aanpakken: geen logge bureaucratie, maar directe lijnen en pure creativiteit.
+              </p>
+            </div>
+            <div className="mt-8 inline-flex items-center gap-3 px-5 py-3 bg-violet-600 text-white rounded-full w-fit">
+              <span className="font-display font-bold text-sm uppercase tracking-wider">Since 2024</span>
+            </div>
+          </motion.div>
+
+          {/* Stat cards row */}
+          {[
+            { icon: <Clock className="w-5 h-5" />, value: "24/7", label: "Beschikbaarheid", desc: "Altijd bereikbaar" },
+            { icon: <Heart className="w-5 h-5" />, value: "100%", label: "Tevredenheid", desc: "Garantie op resultaat" },
+            { icon: <Users className="w-5 h-5" />, value: "3", label: "Creatievelingen", desc: "Klein & persoonlijk" },
+            { icon: <Zap className="w-5 h-5" />, value: "<7d", label: "Levertijd", desc: "Snel opgeleverd" },
+          ].map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 + i * 0.05 }}
+              className="md:col-span-3 bg-slate-50 border border-slate-100 rounded-3xl p-6 md:p-8 group hover:bg-violet-600 hover:border-violet-600 transition-all duration-300"
+            >
+              <div className="w-10 h-10 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center mb-4 group-hover:bg-white/20 group-hover:text-white transition-colors">
+                {stat.icon}
+              </div>
+              <div className="font-display font-bold text-3xl md:text-4xl text-slate-900 group-hover:text-white transition-colors mb-1">
+                {stat.value}
+              </div>
+              <div className="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-white/70 transition-colors mb-2">
+                {stat.label}
+              </div>
+              <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors">
+                {stat.desc}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

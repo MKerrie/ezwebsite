@@ -1,64 +1,42 @@
-
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Zap, RefreshCw, Clock, Smartphone, ChevronDown } from 'lucide-react';
-import { Service } from '../types';
+import { motion } from 'framer-motion';
+import { Zap, RefreshCw, Clock, Smartphone, ArrowRight } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
 
-const services: Service[] = [
+const services = [
   {
     id: 1,
     title: "Website Revamp",
     description: "Heb je een verouderde website die niet meer converteert? Wij strippen hem tot de kern en bouwen hem opnieuw op.",
-    icon: <RefreshCw />
+    icon: <RefreshCw />,
+    gradient: "from-violet-500 to-purple-600",
+    size: "md:col-span-7",
   },
   {
     id: 2,
     title: "24/7 Support",
     description: "Wij werken niet van 9 tot 5. App of bel ons wanneer je wilt. Wij zijn er voor je.",
-    icon: <Clock />
+    icon: <Clock />,
+    gradient: "from-indigo-500 to-violet-600",
+    size: "md:col-span-5",
   },
   {
     id: 3,
     title: "High-End Design",
     description: "Geen standaard templates. Wij maken unieke designs met oog voor detail en animaties.",
-    icon: <Zap />
+    icon: <Zap />,
+    gradient: "from-purple-500 to-pink-500",
+    size: "md:col-span-5",
   },
   {
     id: 4,
     title: "Mobile First",
     description: "Jouw website wordt gebouwd voor de duim. Razendsnel en intuïtief op elk scherm.",
-    icon: <Smartphone />
-  }
+    icon: <Smartphone />,
+    gradient: "from-violet-600 to-indigo-600",
+    size: "md:col-span-7",
+  },
 ];
-
-// Fixed: Correctly typed ServiceCardMobile using React.FC to avoid 'key' prop error
-const ServiceCardMobile: React.FC<{ service: Service, index: number }> = ({ service, index }) => {
-    return (
-        <div className="sticky top-24 w-full mb-[15vh]">
-            <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, margin: "-10%" }}
-                className="bg-white border border-slate-200 rounded-[2.5rem] p-10 shadow-2xl"
-            >
-                <div className="flex justify-between items-start mb-10">
-                    <div className="w-16 h-16 rounded-2xl bg-violet-600 text-white flex items-center justify-center shadow-lg shadow-violet-600/20">
-                         {/* Fix: Explicitly cast to React.ReactElement with className prop to resolve TS overload error */}
-                         {React.cloneElement(service.icon as React.ReactElement<{ className?: string }>, { className: "w-8 h-8" })}
-                    </div>
-                    <span className="font-display font-bold text-6xl text-slate-100 leading-none">0{service.id}</span>
-                </div>
-                <h3 className="font-display font-bold text-4xl uppercase mb-6 text-slate-900 leading-tight">
-                    {service.title}
-                </h3>
-                <p className="text-slate-600 text-lg leading-relaxed">
-                    {service.description}
-                </p>
-            </motion.div>
-        </div>
-    );
-};
 
 const Services: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -69,49 +47,60 @@ const Services: React.FC = () => {
   );
 
   return (
-    <section id="services" ref={ref} className="py-20 md:py-24 bg-slate-100 text-slate-900 transition-colors duration-300">
-      <div className="container mx-auto px-6">
-        
-        {/* Section Header */}
-        <div className="mb-20 md:mb-20">
-          <span className="text-violet-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Onze Expertise</span>
-          <h2 className="font-display font-bold text-5xl md:text-8xl uppercase leading-[0.85] tracking-tighter">
-            Wat wij <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600">Fixen.</span>
-          </h2>
+    <section id="services" ref={ref} className="py-24 md:py-32 bg-slate-50 text-slate-900 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
+
+        {/* Header */}
+        <div className="mb-16 md:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="text-violet-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Onze Expertise</span>
+            <h2 className="font-display font-bold text-5xl md:text-8xl uppercase leading-[0.85] tracking-tighter">
+              Wat wij <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600">Fixen.</span>
+            </h2>
+          </motion.div>
         </div>
 
-        {/* MOBILE: STICKY STACK LAYOUT */}
-        <div className="md:hidden flex flex-col relative">
-            {services.map((service, index) => (
-                <ServiceCardMobile key={service.id} service={service} index={index} />
-            ))}
-            {/* Final spacing to ensure the last card can be fully viewed */}
-            <div className="h-[10vh]" />
-        </div>
-
-        {/* DESKTOP: ORIGINAL GRID LAYOUT (Untouched) */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group relative p-8 bg-white border border-slate-200 rounded-[2.5rem] overflow-hidden hover:shadow-2xl transition-all duration-500 min-h-[280px]"
+              transition={{ delay: index * 0.08 }}
+              className={`${service.size} group relative bg-white border border-slate-100 rounded-3xl p-8 md:p-10 overflow-hidden hover:shadow-2xl hover:shadow-violet-500/5 transition-all duration-500 cursor-pointer`}
             >
-              <div className="relative z-10 flex flex-col h-full justify-between">
-                <div className="flex justify-between items-start mb-8">
-                    <div className="w-16 h-16 rounded-[1.5rem] bg-slate-50 border border-slate-100 flex items-center justify-center text-violet-600 shadow-sm group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
-                         {/* Fix: Explicitly cast to React.ReactElement with className prop to resolve TS overload error */}
-                         {React.cloneElement(service.icon as React.ReactElement<{ className?: string }>, { className: "w-7 h-7" })}
-                    </div>
-                    <span className="font-display font-bold text-5xl text-slate-100 select-none leading-none">0{service.id}</span>
+              {/* Hover gradient overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
+              {/* Content */}
+              <div className="relative z-10 flex flex-col h-full min-h-[200px] md:min-h-[240px] justify-between">
+                <div className="flex justify-between items-start">
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-violet-600 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/20 transition-all duration-300">
+                    {React.cloneElement(service.icon as React.ReactElement<{ className?: string }>, { className: "w-6 h-6" })}
+                  </div>
+                  <span className="font-display font-bold text-6xl text-slate-100 group-hover:text-white/10 select-none leading-none transition-colors">
+                    0{service.id}
+                  </span>
                 </div>
-                <div>
-                  <h3 className="font-display font-bold text-3xl uppercase mb-4 group-hover:text-violet-600 transition-colors">{service.title}</h3>
-                  <p className="text-slate-600 leading-relaxed text-sm lg:text-base">{service.description}</p>
+
+                <div className="mt-auto">
+                  <h3 className="font-display font-bold text-3xl md:text-4xl uppercase mb-3 group-hover:text-white transition-colors tracking-tight">
+                    {service.title}
+                  </h3>
+                  <p className="text-slate-500 leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
+                    {service.description}
+                  </p>
+                  <div className="mt-6 flex items-center gap-2 text-violet-600 group-hover:text-white font-bold text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
+                    <span>Meer info</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
                 </div>
               </div>
             </motion.div>
