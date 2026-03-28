@@ -76,8 +76,14 @@ const About: React.FC = () => {
               <h3 className="font-display font-bold text-2xl md:text-3xl uppercase mb-4 leading-tight">
                 Ons verhaal
               </h3>
+              <p className="text-white/50 leading-relaxed text-sm md:text-base mb-4">
+                Drie studenten uit dezelfde klas met één gedeelde obsessie: het internet. Terwijl anderen huiswerk maken, bouwen wij websites.
+              </p>
+              <p className="text-white/50 leading-relaxed text-sm md:text-base mb-4">
+                Het begon met kleine projectjes voor vrienden en familie. "Kun je even een site maken?" werd al snel "Jullie zijn echt goed hierin." Toen wisten we: dit is wat we willen doen.
+              </p>
               <p className="text-white/50 leading-relaxed text-sm md:text-base">
-                Drie studenten uit dezelfde klas met één gedeelde obsessie: het internet. Terwijl anderen huiswerk maken, bouwen wij websites. Jong, hongerig en met meer ambitie dan de meeste bureaus. Wij bewijzen dat leeftijd niks zegt — alleen het resultaat telt.
+                Jong, hongerig en met meer ambitie dan de meeste bureaus. Wij bewijzen dat leeftijd niks zegt — alleen het resultaat telt. Geen standaard templates, geen saaie oplossingen. Elk project krijgt onze volle aandacht alsof het ons eigen bedrijf is.
               </p>
             </div>
             <div className="mt-8 pt-6 border-t border-white/10">
