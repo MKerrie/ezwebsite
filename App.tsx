@@ -1,17 +1,20 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
-
 const ScrollToTopOnNavigate: React.FC = () => {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   return null;
 };
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import LogoCloud from './components/LogoCloud';
 import About from './components/About';
 import Services from './components/Services';
+import Process from './components/Process';
 import Projects from './components/Projects';
+import CtaBanner from './components/CtaBanner';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CursorEffects from './components/CursorEffects';
@@ -19,14 +22,17 @@ import ScrollToTop from './components/ScrollToTop';
 import ProjectDetail from './pages/ProjectDetail';
 
 const HomePage: React.FC = () => (
-  <div className="antialiased selection:bg-violet-500 selection:text-white font-sans bg-white text-slate-900 transition-colors duration-300">
+  <div className="antialiased selection:bg-violet-500 selection:text-white font-sans bg-white text-slate-900">
     <CursorEffects />
     <Navbar />
     <main>
       <Hero />
+      <LogoCloud />
       <About />
       <Services />
+      <Process />
       <Projects />
+      <CtaBanner />
       <Contact />
     </main>
     <Footer />
