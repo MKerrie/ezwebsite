@@ -41,8 +41,8 @@ const About: React.FC = () => {
           >
             <div className="aspect-[4/3] md:aspect-[16/10]">
               <img
-                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2832&auto=format&fit=crop"
-                alt="Drie vrienden"
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                alt="ezwebsite team working"
                 className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
