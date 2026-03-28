@@ -23,13 +23,13 @@ const ProjectCardMobile: React.FC<{ project: (typeof projects)[0] }> = ({ projec
     <div ref={containerRef} className="relative w-full py-8 px-2">
       <motion.div
         style={{ opacity }}
-        className="relative w-full h-[65vh] rounded-[2.5rem] overflow-hidden shadow-2xl bg-neutral-100 dark:bg-neutral-900"
+        className="relative w-full h-[65vh] rounded-[2.5rem] overflow-hidden shadow-2xl bg-neutral-100"
       >
         <motion.img
           style={{ scale: imgScale, y: yParallax }}
           src={project.image}
           alt={project.title}
-          className="absolute inset-0 w-full h-[115%] object-cover object-top grayscale-[0.3] dark:grayscale-[0.5]"
+          className="absolute inset-0 w-full h-[115%] object-cover object-top grayscale-[0.3]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
@@ -75,7 +75,7 @@ const Projects: React.FC = () => {
   );
 
   return (
-    <section id="projects" ref={ref} className="py-24 bg-white dark:bg-[#020202] text-slate-900 dark:text-white transition-colors duration-300 w-full overflow-x-hidden">
+    <section id="projects" ref={ref} className="py-24 bg-white text-slate-900 transition-colors duration-300 w-full overflow-x-hidden">
       <div className="container mx-auto px-6">
 
         {/* Header */}
@@ -90,7 +90,7 @@ const Projects: React.FC = () => {
             <h2 className="text-[14vw] md:text-9xl font-display font-bold uppercase tracking-tighter leading-[0.75] mb-2">
               Premium
             </h2>
-            <h2 className="text-[14vw] md:text-9xl font-display font-bold uppercase tracking-tighter leading-[0.75] text-stroke dark:text-stroke-white opacity-30">
+            <h2 className="text-[14vw] md:text-9xl font-display font-bold uppercase tracking-tighter leading-[0.75] text-stroke opacity-30">
               Portefeuille.
             </h2>
           </motion.div>
@@ -122,10 +122,10 @@ const Projects: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all" />
                 </div>
-                <div className="mt-8 border-t border-slate-200 dark:border-white/10 pt-6 flex justify-between items-start">
+                <div className="mt-8 border-t border-slate-200 pt-6 flex justify-between items-start">
                   <div>
                     <h3 className="font-display font-bold text-4xl uppercase mb-2 group-hover:text-fuchsia-600 transition-colors">{project.title}</h3>
-                    <p className="text-slate-500 dark:text-gray-400 uppercase tracking-widest text-xs font-bold">{project.category}</p>
+                    <p className="text-slate-500 uppercase tracking-widest text-xs font-bold">{project.category}</p>
                   </div>
                   <ArrowUpRight className="w-6 h-6 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </div>
@@ -144,7 +144,7 @@ const Projects: React.FC = () => {
             <span className="text-4xl md:text-7xl font-display font-bold uppercase tracking-tighter group-hover:text-fuchsia-600 transition-colors">
               Start Project
             </span>
-            <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border-2 border-slate-900 dark:border-white flex items-center justify-center group-hover:bg-fuchsia-600 group-hover:border-fuchsia-600 group-hover:text-white transition-all">
+            <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border-2 border-slate-900 flex items-center justify-center group-hover:bg-fuchsia-600 group-hover:border-fuchsia-600 group-hover:text-white transition-all">
               <Plus className="w-6 h-6 md:w-10 md:h-10" />
             </div>
           </motion.button>

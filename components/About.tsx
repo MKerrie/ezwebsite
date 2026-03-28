@@ -11,7 +11,7 @@ const About: React.FC = () => {
   );
 
   return (
-    <section id="about" ref={ref} className="py-20 md:py-24 bg-slate-100 dark:bg-neutral-900 text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
+    <section id="about" ref={ref} className="py-20 md:py-24 bg-slate-100 text-slate-900 transition-colors duration-300 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           
@@ -24,7 +24,7 @@ const About: React.FC = () => {
           >
             {/* Creative Image Composition */}
             <div className="relative group">
-              <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-full h-full border-2 border-slate-300 dark:border-white/10 rounded-2xl z-0 transition-colors"></div>
+              <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-full h-full border-2 border-slate-300 rounded-2xl z-0 transition-colors"></div>
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
                 alt="ezwebsite team working" 
@@ -49,25 +49,25 @@ const About: React.FC = () => {
             <span className="text-fuchsia-600 font-bold tracking-widest uppercase mb-3 block text-xs md:text-base">Over Ons</span>
             <h2 className="font-display font-bold text-5xl md:text-7xl uppercase leading-[0.9] mb-6 md:mb-8 break-words">
               WIJ MAKEN HET <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-black dark:to-white">Eenvoudig.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-black">Eenvoudig.</span>
             </h2>
             
-            <p className="text-lg md:text-3xl font-bold mb-6 md:mb-8 leading-tight text-slate-900 dark:text-white">
+            <p className="text-lg md:text-3xl font-bold mb-6 md:mb-8 leading-tight text-slate-900">
               WIJ ZIJN AHMAD, KERIM & NAWDAR. DRIE CREATIEVELINGEN MET EEN PASSIE VOOR PIXELS.
             </p>
-            <p className="text-slate-600 dark:text-gray-300 text-sm md:text-lg mb-6 leading-relaxed">
+            <p className="text-slate-600 text-sm md:text-lg mb-6 leading-relaxed">
               Het internet verandert snel. Wat 5 jaar geleden werkte, kost je nu klanten. Wij zijn drie vrienden die webdesign anders aanpakken: geen logge bureaucratie, maar directe lijnen en pure creativiteit.
             </p>
             
             {/* Mobile Stats Bar */}
-            <div className="grid grid-cols-2 gap-4 mt-8 bg-white dark:bg-white/5 p-4 rounded-2xl border border-slate-200 dark:border-white/5">
+            <div className="grid grid-cols-2 gap-4 mt-8 bg-white p-4 rounded-2xl border border-slate-200">
               <div className="text-center p-2">
                 <h4 className="font-display font-bold text-3xl md:text-4xl mb-1 text-fuchsia-600">24/7</h4>
-                <p className="text-[10px] md:text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-gray-500">Beschikbaarheid</p>
+                <p className="text-[10px] md:text-sm font-bold uppercase tracking-wider text-slate-500">Beschikbaarheid</p>
               </div>
-              <div className="text-center p-2 border-l border-slate-100 dark:border-white/10">
+              <div className="text-center p-2 border-l border-slate-100">
                 <h4 className="font-display font-bold text-3xl md:text-4xl mb-1 text-fuchsia-600">100%</h4>
-                <p className="text-[10px] md:text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-gray-500">Tevredenheid</p>
+                <p className="text-[10px] md:text-sm font-bold uppercase tracking-wider text-slate-500">Tevredenheid</p>
               </div>
             </div>
           </motion.div>

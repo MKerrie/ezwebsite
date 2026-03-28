@@ -40,19 +40,19 @@ const ServiceCardMobile: React.FC<{ service: Service, index: number }> = ({ serv
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, margin: "-10%" }}
-                className="bg-white dark:bg-neutral-900 border border-slate-200 dark:border-white/5 rounded-[2.5rem] p-10 shadow-2xl"
+                className="bg-white border border-slate-200 rounded-[2.5rem] p-10 shadow-2xl"
             >
                 <div className="flex justify-between items-start mb-10">
                     <div className="w-16 h-16 rounded-2xl bg-fuchsia-600 text-white flex items-center justify-center shadow-lg shadow-fuchsia-600/20">
                          {/* Fix: Explicitly cast to React.ReactElement with className prop to resolve TS overload error */}
                          {React.cloneElement(service.icon as React.ReactElement<{ className?: string }>, { className: "w-8 h-8" })}
                     </div>
-                    <span className="font-display font-bold text-6xl text-slate-100 dark:text-white/5 leading-none">0{service.id}</span>
+                    <span className="font-display font-bold text-6xl text-slate-100 leading-none">0{service.id}</span>
                 </div>
-                <h3 className="font-display font-bold text-4xl uppercase mb-6 text-slate-900 dark:text-white leading-tight">
+                <h3 className="font-display font-bold text-4xl uppercase mb-6 text-slate-900 leading-tight">
                     {service.title}
                 </h3>
-                <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed">
+                <p className="text-slate-600 text-lg leading-relaxed">
                     {service.description}
                 </p>
             </motion.div>
@@ -69,7 +69,7 @@ const Services: React.FC = () => {
   );
 
   return (
-    <section id="services" ref={ref} className="py-20 md:py-24 bg-slate-100 dark:bg-[#080808] text-slate-900 dark:text-white transition-colors duration-300">
+    <section id="services" ref={ref} className="py-20 md:py-24 bg-slate-100 text-slate-900 transition-colors duration-300">
       <div className="container mx-auto px-6">
         
         {/* Section Header */}
@@ -77,7 +77,7 @@ const Services: React.FC = () => {
           <span className="text-fuchsia-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Onze Expertise</span>
           <h2 className="font-display font-bold text-5xl md:text-8xl uppercase leading-[0.85] tracking-tighter">
             Wat wij <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-purple-600 dark:from-fuchsia-400 dark:to-purple-400">Fixen.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-purple-600">Fixen.</span>
           </h2>
         </div>
 
@@ -99,19 +99,19 @@ const Services: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group relative p-8 bg-white dark:bg-neutral-900 border border-slate-200 dark:border-white/5 rounded-[2.5rem] overflow-hidden hover:shadow-2xl transition-all duration-500 min-h-[280px]"
+              className="group relative p-8 bg-white border border-slate-200 rounded-[2.5rem] overflow-hidden hover:shadow-2xl transition-all duration-500 min-h-[280px]"
             >
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div className="flex justify-between items-start mb-8">
-                    <div className="w-16 h-16 rounded-[1.5rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 flex items-center justify-center text-fuchsia-600 shadow-sm group-hover:bg-fuchsia-600 group-hover:text-white transition-all duration-300">
+                    <div className="w-16 h-16 rounded-[1.5rem] bg-slate-50 border border-slate-100 flex items-center justify-center text-fuchsia-600 shadow-sm group-hover:bg-fuchsia-600 group-hover:text-white transition-all duration-300">
                          {/* Fix: Explicitly cast to React.ReactElement with className prop to resolve TS overload error */}
                          {React.cloneElement(service.icon as React.ReactElement<{ className?: string }>, { className: "w-7 h-7" })}
                     </div>
-                    <span className="font-display font-bold text-5xl text-slate-100 dark:text-white/5 select-none leading-none">0{service.id}</span>
+                    <span className="font-display font-bold text-5xl text-slate-100 select-none leading-none">0{service.id}</span>
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-3xl uppercase mb-4 group-hover:text-fuchsia-600 transition-colors">{service.title}</h3>
-                  <p className="text-slate-600 dark:text-gray-400 leading-relaxed text-sm lg:text-base">{service.description}</p>
+                  <p className="text-slate-600 leading-relaxed text-sm lg:text-base">{service.description}</p>
                 </div>
               </div>
             </motion.div>

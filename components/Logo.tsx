@@ -47,7 +47,7 @@ const Logo: React.FC<LogoProps> = ({ className = "", light = false }) => {
 
       {/* Typography */}
       <div className="flex flex-col justify-center">
-        <span className={`font-display font-bold text-2xl tracking-tighter uppercase leading-none transition-colors duration-300 ${light ? 'text-black' : 'text-neutral-900 dark:text-white'}`}>
+        <span className={`font-display font-bold text-2xl tracking-tighter uppercase leading-none transition-colors duration-300 ${light ? 'text-black' : 'text-neutral-900
           ez<span className="text-fuchsia-500 group-hover:text-fuchsia-400 transition-colors">website</span>
         </span>
       </div>

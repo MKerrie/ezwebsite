@@ -37,7 +37,7 @@ const CursorEffects: React.FC = () => {
     <>
       <div ref={glowRef} className="fixed inset-0 z-0 pointer-events-none" />
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-black/20 dark:border-white/30 rounded-full pointer-events-none z-[60] mix-blend-difference hidden md:block"
+        className="fixed top-0 left-0 w-8 h-8 border border-black/20 rounded-full pointer-events-none z-[60] mix-blend-difference hidden md:block"
         style={{ x: cursorXSpring, y: cursorYSpring }}
       />
     </>

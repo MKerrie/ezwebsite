@@ -180,7 +180,7 @@ const Hero: React.FC = () => {
     <section 
       ref={ref} 
       onMouseMove={handleMouseMove}
-      className="relative min-h-[100dvh] md:min-h-[110vh] w-full overflow-hidden bg-white dark:bg-[#030305] flex flex-col items-center pt-32 md:pt-48 pb-10 md:pb-20"
+      className="relative min-h-[100dvh] md:min-h-[110vh] w-full overflow-hidden bg-white flex flex-col items-center pt-32 md:pt-48 pb-10 md:pb-20"
     >
       
       {/* 
@@ -204,7 +204,7 @@ const Hero: React.FC = () => {
             x: { duration: 0 }, // Handled by mouse
             y: { duration: 0 }  // Handled by mouse
           }}
-          className="absolute top-[-10%] md:top-[-20%] left-1/2 -translate-x-1/2 w-[120vw] h-[120vw] md:w-[80vw] md:h-[80vw] bg-fuchsia-600/15 dark:bg-indigo-600/20 blur-[80px] md:blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen transition-transform duration-100 ease-out" 
+          className="absolute top-[-10%] md:top-[-20%] left-1/2 -translate-x-1/2 w-[120vw] h-[120vw] md:w-[80vw] md:h-[80vw] bg-fuchsia-600/15 blur-[80px] md:blur-[120px] rounded-full mix-blend-multiply transition-transform duration-100 ease-out" 
         />
         
         {/* Secondary Glow - Purple */}
@@ -214,7 +214,7 @@ const Hero: React.FC = () => {
             scale: [1, 1.1, 1],
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[20%] right-[-10%] w-[40vw] h-[40vw] bg-purple-500/20 dark:bg-fuchsia-600/10 blur-[100px] rounded-full" 
+          className="absolute top-[20%] right-[-10%] w-[40vw] h-[40vw] bg-purple-500/20 blur-[100px] rounded-full" 
         />
 
         {/* Grid Floor Effect (Perspective) */}
@@ -236,17 +236,17 @@ const Hero: React.FC = () => {
             className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/5 backdrop-blur-md mb-6 md:mb-8"
           >
             <Sparkles className="w-3 h-3 text-fuchsia-500" />
-            <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-fuchsia-600 dark:text-fuchsia-400">
+            <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-fuchsia-600">
               High-End Digital Agency
             </span>
           </motion.div>
 
           {/* MASSIVE HEADLINE (Staggered) */}
           <div className="relative mb-6 md:mb-8 flex flex-col items-center w-full">
-             <div className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-slate-900 dark:text-white uppercase overflow-hidden">
+             <div className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-slate-900 uppercase overflow-hidden">
                <StaggeredText text="DIGITALE" delayStart={0} />
              </div>
-             <div className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 via-indigo-500 to-purple-600 dark:from-fuchsia-400 dark:via-indigo-400 dark:to-purple-400 uppercase pb-2 md:pb-4 overflow-hidden">
+             <div className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 via-indigo-500 to-purple-600 uppercase pb-2 md:pb-4 overflow-hidden">
                 <StaggeredText text="IMPACT." delayStart={0.3} />
              </div>
              
@@ -257,7 +257,7 @@ const Hero: React.FC = () => {
                 transition={{ delay: 1.2, type: "spring" }}
                 className="absolute top-0 right-[-5%] md:right-[-10%] w-12 h-12 md:w-24 md:h-24 hidden md:flex items-center justify-center"
              >
-                <div className="w-full h-full border border-dashed border-slate-300 dark:border-white/20 rounded-full animate-spin-slow" />
+                <div className="w-full h-full border border-dashed border-slate-300 rounded-full animate-spin-slow" />
              </motion.div>
           </div>
 
@@ -266,9 +266,9 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="text-base md:text-2xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed font-light mb-8 md:mb-10 px-4"
+            className="text-base md:text-2xl text-slate-600 max-w-2xl leading-relaxed font-light mb-8 md:mb-10 px-4"
           >
-            Je website is je digitale visitekaartje. Wij transformeren jouw visie naar een ervaring die <span className="text-slate-900 dark:text-white font-semibold">blijft hangen</span>.
+            Je website is je digitale visitekaartje. Wij transformeren jouw visie naar een ervaring die <span className="text-slate-900 font-semibold">blijft hangen</span>.
           </motion.p>
 
           {/* Buttons - Mobile: Full Width Stack */}
@@ -281,14 +281,14 @@ const Hero: React.FC = () => {
             <a 
               href="#projects"
               onClick={(e) => handleScroll(e, '#projects')}
-              className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-slate-900 dark:bg-white text-white dark:text-black rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform shadow-lg shadow-fuchsia-500/20 text-center text-sm md:text-base"
+              className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-slate-900 text-white rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform shadow-lg shadow-fuchsia-500/20 text-center text-sm md:text-base"
             >
               Bekijk Werk
             </a>
             <a 
               href="#contact"
               onClick={(e) => handleScroll(e, '#contact')}
-              className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-transparent border border-slate-200 dark:border-white/20 text-slate-900 dark:text-white rounded-full font-bold uppercase tracking-wider hover:bg-slate-50 dark:hover:bg-white/10 transition-colors flex items-center justify-center gap-2 group text-center text-sm md:text-base"
+              className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-transparent border border-slate-200 text-slate-900 rounded-full font-bold uppercase tracking-wider hover:bg-slate-50 transition-colors flex items-center justify-center gap-2 group text-center text-sm md:text-base"
             >
               <div className="w-6 h-6 rounded-full bg-fuchsia-600 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                 <Play className="w-2.5 h-2.5 fill-current" />
@@ -306,7 +306,7 @@ const Hero: React.FC = () => {
             className="mt-12 md:mt-32 w-full max-w-5xl relative perspective-1000 px-2 md:px-0"
           >
             {/* The Glass Card */}
-            <div className="relative bg-white/40 dark:bg-white/5 backdrop-blur-2xl border border-white/50 dark:border-white/10 rounded-t-2xl md:rounded-t-[3rem] p-3 md:p-6 shadow-2xl overflow-hidden group">
+            <div className="relative bg-white/40 backdrop-blur-2xl border border-white/50 rounded-t-2xl md:rounded-t-[3rem] p-3 md:p-6 shadow-2xl overflow-hidden group">
                 
                 {/* Header of the mock window */}
                 <div className="flex items-center justify-between mb-3 md:mb-4 px-1 md:px-2">
@@ -315,7 +315,7 @@ const Hero: React.FC = () => {
                         <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500/80" />
                         <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500/80" />
                     </div>
-                    <div className="h-5 md:h-6 px-3 md:px-4 rounded-full bg-black/5 dark:bg-white/10 flex items-center">
+                    <div className="h-5 md:h-6 px-3 md:px-4 rounded-full bg-black/5 flex items-center">
                         <span className="text-[8px] md:text-[10px] font-mono opacity-50">ezwebsite.nl/future</span>
                     </div>
                 </div>
