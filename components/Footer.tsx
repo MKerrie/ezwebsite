@@ -23,14 +23,14 @@ const Footer: React.FC = () => {
           <div className="max-w-3xl">
             <h2 className="font-display font-bold text-5xl md:text-8xl lg:text-9xl uppercase leading-none mb-8">
               Heb je een <br/>
-              <span className="text-violet-600">Idee?</span>
+              <span className="text-fuchsia-600">Idee?</span>
             </h2>
           </div>
           <div className="mt-8 md:mt-0 w-full md:w-auto flex justify-center md:block">
              <a 
                 href="#contact" 
                 onClick={(e) => handleScroll(e, '#contact')}
-                className="group flex items-center justify-center w-32 h-32 md:w-48 md:h-48 rounded-full bg-slate-900 dark:bg-white text-white dark:text-black font-bold text-lg md:text-xl uppercase tracking-widest hover:scale-110 hover:bg-violet-600 hover:text-white dark:hover:bg-violet-600 dark:hover:text-white transition-all duration-300 shadow-xl"
+                className="group flex items-center justify-center w-32 h-32 md:w-48 md:h-48 rounded-full bg-slate-900 dark:bg-white text-white dark:text-black font-bold text-lg md:text-xl uppercase tracking-widest hover:scale-110 hover:bg-fuchsia-600 hover:text-white dark:hover:bg-fuchsia-600 dark:hover:text-white transition-all duration-300 shadow-xl"
             >
                <span className="group-hover:-translate-y-1 transition-transform">Let's Talk</span>
              </a>
@@ -52,27 +52,27 @@ const Footer: React.FC = () => {
           <div className="col-span-1">
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-gray-500 mb-6">Sitemap</h4>
             <ul className="space-y-4 font-display text-lg md:text-xl uppercase font-bold">
-              <li><a href="#" onClick={(e) => handleScroll(e, '#')} className="hover:text-violet-500 transition-colors">Home</a></li>
-              <li><a href="#about" onClick={(e) => handleScroll(e, '#about')} className="hover:text-violet-500 transition-colors">Over Ons</a></li>
-              <li><a href="#services" onClick={(e) => handleScroll(e, '#services')} className="hover:text-violet-500 transition-colors">Diensten</a></li>
-              <li><a href="#projects" onClick={(e) => handleScroll(e, '#projects')} className="hover:text-violet-500 transition-colors">Projecten</a></li>
+              <li><a href="#" onClick={(e) => handleScroll(e, '#')} className="hover:text-fuchsia-500 transition-colors">Home</a></li>
+              <li><a href="#about" onClick={(e) => handleScroll(e, '#about')} className="hover:text-fuchsia-500 transition-colors">Over Ons</a></li>
+              <li><a href="#services" onClick={(e) => handleScroll(e, '#services')} className="hover:text-fuchsia-500 transition-colors">Diensten</a></li>
+              <li><a href="#projects" onClick={(e) => handleScroll(e, '#projects')} className="hover:text-fuchsia-500 transition-colors">Projecten</a></li>
             </ul>
           </div>
 
           <div className="col-span-1">
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-gray-500 mb-6">Socials</h4>
             <ul className="space-y-4 font-display text-lg md:text-xl uppercase font-bold">
-              <li><a href="#" className="flex items-center hover:text-violet-500 transition-colors group">Instagram <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
-              <li><a href="#" className="flex items-center hover:text-violet-500 transition-colors group">LinkedIn <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
-              <li><a href="#" className="flex items-center hover:text-violet-500 transition-colors group">Dribbble <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
-              <li><a href="#" className="flex items-center hover:text-violet-500 transition-colors group">Twitter <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
+              <li><a href="#" className="flex items-center hover:text-fuchsia-500 transition-colors group">Instagram <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
+              <li><a href="#" className="flex items-center hover:text-fuchsia-500 transition-colors group">LinkedIn <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
+              <li><a href="#" className="flex items-center hover:text-fuchsia-500 transition-colors group">Dribbble <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
+              <li><a href="#" className="flex items-center hover:text-fuchsia-500 transition-colors group">Twitter <ArrowUpRight className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
             </ul>
           </div>
 
           <div className="col-span-1">
              <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-gray-500 mb-6">Contact</h4>
-             <a href="mailto:hello@ezwebsite.nl" className="block font-display text-lg md:text-xl uppercase font-bold mb-2 hover:text-violet-500 transition-colors">hello@ezwebsite.nl</a>
-             <a href="tel:+31612345678" className="block font-display text-lg md:text-xl uppercase font-bold text-slate-400 dark:text-gray-400 hover:text-violet-500 transition-colors">+31 6 1234 5678</a>
+             <a href="mailto:hello@ezwebsite.nl" className="block font-display text-lg md:text-xl uppercase font-bold mb-2 hover:text-fuchsia-500 transition-colors">hello@ezwebsite.nl</a>
+             <a href="tel:+31612345678" className="block font-display text-lg md:text-xl uppercase font-bold text-slate-400 dark:text-gray-400 hover:text-fuchsia-500 transition-colors">+31 6 1234 5678</a>
              <p className="text-slate-500 dark:text-gray-500 mt-4">Amsterdam, Nederland</p>
           </div>
         </div>

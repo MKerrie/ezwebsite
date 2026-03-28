@@ -18,7 +18,7 @@ import ScrollToTop from './components/ScrollToTop';
 import ProjectDetail from './pages/ProjectDetail';
 
 const HomePage: React.FC<{ isDarkMode: boolean; toggleTheme: () => void }> = ({ isDarkMode, toggleTheme }) => (
-  <div className="antialiased selection:bg-violet-500 selection:text-white font-sans bg-white dark:bg-black text-slate-900 dark:text-white transition-colors duration-300">
+  <div className="antialiased selection:bg-fuchsia-500 selection:text-white font-sans bg-white dark:bg-black text-slate-900 dark:text-white transition-colors duration-300">
     <CursorEffects />
     <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
     <main>

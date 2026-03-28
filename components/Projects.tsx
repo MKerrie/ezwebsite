@@ -47,7 +47,7 @@ const ProjectCardMobile: React.FC<{ project: (typeof projects)[0] }> = ({ projec
             <div className="pt-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <span className="text-white/30 font-display font-bold text-xl italic">0{project.id}</span>
-                <div className="h-[1px] w-8 bg-violet-600" />
+                <div className="h-[1px] w-8 bg-fuchsia-600" />
               </div>
               <Link to={`/project/${toSlug(project.title)}`}>
                 <motion.div
@@ -86,7 +86,7 @@ const Projects: React.FC = () => {
             viewport={{ once: true }}
             className="flex flex-col"
           >
-            <span className="text-violet-600 font-bold uppercase tracking-[0.6em] text-[10px] mb-4 block">Selected Works</span>
+            <span className="text-fuchsia-600 font-bold uppercase tracking-[0.6em] text-[10px] mb-4 block">Selected Works</span>
             <h2 className="text-[14vw] md:text-9xl font-display font-bold uppercase tracking-tighter leading-[0.75] mb-2">
               Premium
             </h2>
@@ -124,7 +124,7 @@ const Projects: React.FC = () => {
                 </div>
                 <div className="mt-8 border-t border-slate-200 dark:border-white/10 pt-6 flex justify-between items-start">
                   <div>
-                    <h3 className="font-display font-bold text-4xl uppercase mb-2 group-hover:text-violet-600 transition-colors">{project.title}</h3>
+                    <h3 className="font-display font-bold text-4xl uppercase mb-2 group-hover:text-fuchsia-600 transition-colors">{project.title}</h3>
                     <p className="text-slate-500 dark:text-gray-400 uppercase tracking-widest text-xs font-bold">{project.category}</p>
                   </div>
                   <ArrowUpRight className="w-6 h-6 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -141,10 +141,10 @@ const Projects: React.FC = () => {
             whileTap={{ scale: 0.95 }}
             className="group flex items-center justify-center gap-6 mx-auto"
           >
-            <span className="text-4xl md:text-7xl font-display font-bold uppercase tracking-tighter group-hover:text-violet-600 transition-colors">
+            <span className="text-4xl md:text-7xl font-display font-bold uppercase tracking-tighter group-hover:text-fuchsia-600 transition-colors">
               Start Project
             </span>
-            <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border-2 border-slate-900 dark:border-white flex items-center justify-center group-hover:bg-violet-600 group-hover:border-violet-600 group-hover:text-white transition-all">
+            <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border-2 border-slate-900 dark:border-white flex items-center justify-center group-hover:bg-fuchsia-600 group-hover:border-fuchsia-600 group-hover:text-white transition-all">
               <Plus className="w-6 h-6 md:w-10 md:h-10" />
             </div>
           </motion.button>

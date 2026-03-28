@@ -22,7 +22,7 @@ const Logo: React.FC<LogoProps> = ({ className = "", light = false }) => {
             }}
         >
             {/* Background with Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-600 to-violet-800 rounded-lg shadow-lg border border-white/10 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600 to-fuchsia-800 rounded-lg shadow-lg border border-white/10 overflow-hidden">
                 {/* Shimmer Effect */}
                 <motion.div 
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12"
@@ -41,14 +41,14 @@ const Logo: React.FC<LogoProps> = ({ className = "", light = false }) => {
             </div>
             
             {/* Glow behind */}
-            <div className="absolute inset-0 bg-violet-500 blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 -z-10 transform translate-z-[-10px]"></div>
+            <div className="absolute inset-0 bg-fuchsia-500 blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-300 -z-10 transform translate-z-[-10px]"></div>
         </motion.div>
       </div>
 
       {/* Typography */}
       <div className="flex flex-col justify-center">
         <span className={`font-display font-bold text-2xl tracking-tighter uppercase leading-none transition-colors duration-300 ${light ? 'text-black' : 'text-neutral-900 dark:text-white'}`}>
-          ez<span className="text-violet-500 group-hover:text-violet-400 transition-colors">website</span>
+          ez<span className="text-fuchsia-500 group-hover:text-fuchsia-400 transition-colors">website</span>
         </span>
       </div>
     </a>

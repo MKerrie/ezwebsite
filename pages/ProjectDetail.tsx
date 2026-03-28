@@ -14,7 +14,7 @@ const ProjectDetail: React.FC = () => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-[#020202] text-slate-900 dark:text-white">
         <p className="text-xl font-display uppercase mb-6">Project niet gevonden</p>
-        <Link to="/" className="text-violet-600 underline">Terug naar home</Link>
+        <Link to="/" className="text-fuchsia-600 underline">Terug naar home</Link>
       </div>
     );
   }
@@ -34,7 +34,7 @@ const ProjectDetail: React.FC = () => {
       <div className="fixed top-6 left-6 z-50">
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-slate-200 dark:border-white/10 text-sm font-bold uppercase tracking-widest hover:bg-violet-600 hover:text-white hover:border-violet-600 transition-all"
+          className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-slate-200 dark:border-white/10 text-sm font-bold uppercase tracking-widest hover:bg-fuchsia-600 hover:text-white hover:border-fuchsia-600 transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
           <span className="hidden sm:inline">Terug</span>
@@ -102,7 +102,7 @@ const ProjectDetail: React.FC = () => {
             <button
               key={i}
               onClick={() => setActiveImg(i)}
-              className={`shrink-0 w-20 h-14 md:w-28 md:h-18 rounded-xl overflow-hidden border-2 transition-all ${i === activeImg ? 'border-violet-500' : 'border-transparent opacity-50 hover:opacity-80'}`}
+              className={`shrink-0 w-20 h-14 md:w-28 md:h-18 rounded-xl overflow-hidden border-2 transition-all ${i === activeImg ? 'border-fuchsia-500' : 'border-transparent opacity-50 hover:opacity-80'}`}
             >
               <img src={img} alt="" className="w-full h-full object-cover" />
             </button>
@@ -117,7 +117,7 @@ const ProjectDetail: React.FC = () => {
           {/* Left column */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <span className="px-3 py-1 rounded-full bg-violet-600/10 border border-violet-600/30 text-[9px] font-bold uppercase tracking-[0.3em] text-violet-500">
+              <span className="px-3 py-1 rounded-full bg-fuchsia-600/10 border border-fuchsia-600/30 text-[9px] font-bold uppercase tracking-[0.3em] text-fuchsia-500">
                 {project.category}
               </span>
               <span className="text-slate-400 dark:text-white/30 text-xs font-bold tracking-widest">{project.year}</span>
@@ -136,7 +136,7 @@ const ProjectDetail: React.FC = () => {
               {project.tags.map(tag => (
                 <span
                   key={tag}
-                  className="px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-violet-600/10 border border-violet-600/30 text-violet-500"
+                  className="px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-fuchsia-600/10 border border-fuchsia-600/30 text-fuchsia-500"
                 >
                   {tag}
                 </span>
@@ -148,12 +148,12 @@ const ProjectDetail: React.FC = () => {
           <div className="md:pt-32">
             <div className="sticky top-24 space-y-8">
               <div className="space-y-4">
-                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-violet-600 block">
+                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-fuchsia-600 block">
                   Hoogtepunten
                 </span>
                 {project.highlights.map((h, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="mt-2 h-[2px] w-6 shrink-0 bg-violet-600" />
+                    <div className="mt-2 h-[2px] w-6 shrink-0 bg-fuchsia-600" />
                     <p className="text-slate-700 dark:text-gray-300 text-sm leading-relaxed">{h}</p>
                   </div>
                 ))}
@@ -167,10 +167,10 @@ const ProjectDetail: React.FC = () => {
                     rel="noopener noreferrer"
                     className="flex items-center justify-between w-full group"
                   >
-                    <span className="font-display font-bold text-2xl uppercase tracking-tighter group-hover:text-violet-600 transition-colors">
+                    <span className="font-display font-bold text-2xl uppercase tracking-tighter group-hover:text-fuchsia-600 transition-colors">
                       Bekijk site
                     </span>
-                    <div className="w-10 h-10 rounded-full bg-violet-600 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                    <div className="w-10 h-10 rounded-full bg-fuchsia-600 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                       <ArrowUpRight className="w-5 h-5" />
                     </div>
                   </a>
@@ -179,10 +179,10 @@ const ProjectDetail: React.FC = () => {
                   to="/#contact"
                   className="flex items-center justify-between w-full group"
                 >
-                  <span className="font-display font-bold text-2xl uppercase tracking-tighter group-hover:text-violet-600 transition-colors">
+                  <span className="font-display font-bold text-2xl uppercase tracking-tighter group-hover:text-fuchsia-600 transition-colors">
                     Neem contact op
                   </span>
-                  <div className="w-10 h-10 rounded-full border-2 border-slate-900 dark:border-white flex items-center justify-center group-hover:bg-violet-600 group-hover:border-violet-600 group-hover:text-white transition-all">
+                  <div className="w-10 h-10 rounded-full border-2 border-slate-900 dark:border-white flex items-center justify-center group-hover:bg-fuchsia-600 group-hover:border-fuchsia-600 group-hover:text-white transition-all">
                     <ArrowUpRight className="w-5 h-5" />
                   </div>
                 </Link>
@@ -195,12 +195,12 @@ const ProjectDetail: React.FC = () => {
         {project.url && (
           <div className="mt-16 md:mt-24">
             <div className="flex items-center justify-between mb-6">
-              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-violet-600">Live Site</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-fuchsia-600">Live Site</span>
               <a
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-white/40 hover:text-violet-600 dark:hover:text-violet-500 transition-colors"
+                className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-white/40 hover:text-fuchsia-600 dark:hover:text-fuchsia-500 transition-colors"
               >
                 Openen in nieuw tabblad <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
@@ -241,7 +241,7 @@ const ProjectDetail: React.FC = () => {
                         className="w-full"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                        <span className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 px-6 py-3 rounded-full bg-violet-600 text-white text-sm font-bold uppercase tracking-widest">
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 px-6 py-3 rounded-full bg-fuchsia-600 text-white text-sm font-bold uppercase tracking-widest">
                           Bezoek site <ArrowUpRight className="w-4 h-4" />
                         </span>
                       </div>
@@ -272,7 +272,7 @@ const ProjectDetail: React.FC = () => {
               <img src={prevProject.image} alt={prevProject.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all" />
             </div>
-            <h3 className="font-display font-bold text-xl uppercase tracking-tighter group-hover:text-violet-600 transition-colors flex items-center gap-2">
+            <h3 className="font-display font-bold text-xl uppercase tracking-tighter group-hover:text-fuchsia-600 transition-colors flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" /> {prevProject.title}
             </h3>
           </Link>
@@ -286,7 +286,7 @@ const ProjectDetail: React.FC = () => {
               <img src={nextProject.image} alt={nextProject.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all" />
             </div>
-            <h3 className="font-display font-bold text-xl uppercase tracking-tighter group-hover:text-violet-600 transition-colors flex items-center gap-2">
+            <h3 className="font-display font-bold text-xl uppercase tracking-tighter group-hover:text-fuchsia-600 transition-colors flex items-center gap-2">
               {nextProject.title} <ArrowUpRight className="w-4 h-4" />
             </h3>
           </Link>

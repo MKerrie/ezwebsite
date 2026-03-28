@@ -43,7 +43,7 @@ const ServiceCardMobile: React.FC<{ service: Service, index: number }> = ({ serv
                 className="bg-white dark:bg-neutral-900 border border-slate-200 dark:border-white/5 rounded-[2.5rem] p-10 shadow-2xl"
             >
                 <div className="flex justify-between items-start mb-10">
-                    <div className="w-16 h-16 rounded-2xl bg-violet-600 text-white flex items-center justify-center shadow-lg shadow-violet-600/20">
+                    <div className="w-16 h-16 rounded-2xl bg-fuchsia-600 text-white flex items-center justify-center shadow-lg shadow-fuchsia-600/20">
                          {/* Fix: Explicitly cast to React.ReactElement with className prop to resolve TS overload error */}
                          {React.cloneElement(service.icon as React.ReactElement<{ className?: string }>, { className: "w-8 h-8" })}
                     </div>
@@ -74,10 +74,10 @@ const Services: React.FC = () => {
         
         {/* Section Header */}
         <div className="mb-20 md:mb-20">
-          <span className="text-violet-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Onze Expertise</span>
+          <span className="text-fuchsia-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Onze Expertise</span>
           <h2 className="font-display font-bold text-5xl md:text-8xl uppercase leading-[0.85] tracking-tighter">
             Wat wij <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600 dark:from-violet-400 dark:to-purple-400">Fixen.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-purple-600 dark:from-fuchsia-400 dark:to-purple-400">Fixen.</span>
           </h2>
         </div>
 
@@ -103,14 +103,14 @@ const Services: React.FC = () => {
             >
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div className="flex justify-between items-start mb-8">
-                    <div className="w-16 h-16 rounded-[1.5rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 flex items-center justify-center text-violet-600 shadow-sm group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
+                    <div className="w-16 h-16 rounded-[1.5rem] bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/10 flex items-center justify-center text-fuchsia-600 shadow-sm group-hover:bg-fuchsia-600 group-hover:text-white transition-all duration-300">
                          {/* Fix: Explicitly cast to React.ReactElement with className prop to resolve TS overload error */}
                          {React.cloneElement(service.icon as React.ReactElement<{ className?: string }>, { className: "w-7 h-7" })}
                     </div>
                     <span className="font-display font-bold text-5xl text-slate-100 dark:text-white/5 select-none leading-none">0{service.id}</span>
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-3xl uppercase mb-4 group-hover:text-violet-600 transition-colors">{service.title}</h3>
+                  <h3 className="font-display font-bold text-3xl uppercase mb-4 group-hover:text-fuchsia-600 transition-colors">{service.title}</h3>
                   <p className="text-slate-600 dark:text-gray-400 leading-relaxed text-sm lg:text-base">{service.description}</p>
                 </div>
               </div>
