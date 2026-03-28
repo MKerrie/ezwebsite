@@ -182,8 +182,8 @@ const Hero: React.FC = () => {
             className="flex items-center gap-8 md:gap-16 mt-12 md:mt-16"
           >
             {[
-              { value: "24/7", label: "Support" },
-              { value: "100%", label: "Tevredenheid" },
+              { value: "24/7", label: "Bereikbaar" },
+              { value: "100%", label: "Maatwerk" },
               { value: "3", label: "Creatievelingen" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
