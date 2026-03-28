@@ -14,7 +14,6 @@ import About from './components/About';
 import Services from './components/Services';
 import Process from './components/Process';
 import Projects from './components/Projects';
-import CtaBanner from './components/CtaBanner';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CursorEffects from './components/CursorEffects';
@@ -32,7 +31,6 @@ const HomePage: React.FC = () => (
       <Services />
       <Process />
       <Projects />
-      <CtaBanner />
       <Contact />
     </main>
     <Footer />
