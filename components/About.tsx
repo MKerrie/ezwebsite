@@ -7,7 +7,7 @@ const About: React.FC = () => {
   useSEO(
     ref,
     "Over Ons | ezwebsite - Creative Web Design Duo",
-    "Meet the creative minds behind ezwebsite. Ahmad and Kerim are passionate about pixels, providing 24/7 availability and 100% satisfaction."
+    "Meet the creative minds behind ezwebsite. Ahmad, Kerim and Nawdar are passionate about pixels, providing 24/7 availability and 100% satisfaction."
   );
 
   return (
@@ -53,10 +53,10 @@ const About: React.FC = () => {
             </h2>
             
             <p className="text-lg md:text-3xl font-bold mb-6 md:mb-8 leading-tight text-slate-900 dark:text-white">
-              WIJ ZIJN AHMAD & KERIM. TWEE CREATIEVELINGEN MET EEN PASSIE VOOR PIXELS.
+              WIJ ZIJN AHMAD, KERIM & NAWDAR. DRIE CREATIEVELINGEN MET EEN PASSIE VOOR PIXELS.
             </p>
             <p className="text-slate-600 dark:text-gray-300 text-sm md:text-lg mb-6 leading-relaxed">
-              Het internet verandert snel. Wat 5 jaar geleden werkte, kost je nu klanten. Wij zijn twee vrienden die webdesign anders aanpakken: geen logge bureaucratie, maar directe lijnen en pure creativiteit.
+              Het internet verandert snel. Wat 5 jaar geleden werkte, kost je nu klanten. Wij zijn drie vrienden die webdesign anders aanpakken: geen logge bureaucratie, maar directe lijnen en pure creativiteit.
             </p>
             
             {/* Mobile Stats Bar */}
