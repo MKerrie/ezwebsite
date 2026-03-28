@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
+
 const ScrollToTopOnNavigate: React.FC = () => {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
@@ -34,10 +35,6 @@ const HomePage: React.FC = () => (
 );
 
 const App: React.FC = () => {
-  useEffect(() => {
-    document.documentElement.classList.remove('dark');
-  }, []);
-
   return (
     <BrowserRouter basename="/ezwebsite">
       <ScrollToTopOnNavigate />
