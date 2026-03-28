@@ -1,111 +1,141 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useSEO } from '../hooks/useSEO';
-import { Clock, Heart, Users, Zap } from 'lucide-react';
 
 const About: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
   useSEO(
     ref,
-    "Over Ons | ezwebsite - Creative Web Design Trio",
-    "Meet the creative minds behind ezwebsite. Ahmad, Kerim and Nawdar are passionate about pixels, providing 24/7 availability and 100% satisfaction."
+    "Over Ons | ezwebsite - Drie Vrienden, Één Missie",
+    "Ahmad, Kerim en Nawdar. Drie vrienden die samen websites bouwen waar je blij van wordt."
   );
 
   return (
     <section id="about" ref={ref} className="py-24 md:py-32 bg-white text-slate-900 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
 
-        {/* Section header */}
-        <div className="mb-16 md:mb-20">
+        {/* Top: big statement */}
+        <div className="mb-16 md:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <span className="text-violet-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Over Ons</span>
-            <h2 className="font-display font-bold text-5xl md:text-8xl uppercase leading-[0.85] tracking-tighter">
-              Drie vrienden. <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600">Één missie.</span>
+            <h2 className="font-display font-bold text-5xl md:text-8xl uppercase leading-[0.85] tracking-tighter max-w-4xl">
+              Geen bureau. <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600">Gewoon drie vrienden.</span>
             </h2>
           </motion.div>
         </div>
 
-        {/* Bento Grid */}
+        {/* Bento grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
 
-          {/* Main image - large card */}
+          {/* Main image */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="md:col-span-7 relative rounded-3xl overflow-hidden group"
+            className="md:col-span-8 relative rounded-3xl overflow-hidden group"
           >
             <div className="aspect-[4/3] md:aspect-[16/10]">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
-                alt="ezwebsite team working"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2832&auto=format&fit=crop"
+                alt="Drie vrienden"
+                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20">
-                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  <span className="text-white text-xs font-bold uppercase tracking-widest">Team ezwebsite</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 right-6 md:right-10">
+                <div className="flex items-center gap-3 mb-4">
+                  {["Ahmad", "Kerim", "Nawdar"].map((name) => (
+                    <div key={name} className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20">
+                      <span className="text-white text-xs md:text-sm font-bold">{name}</span>
+                    </div>
+                  ))}
                 </div>
+                <p className="text-white/60 text-sm md:text-base max-w-md">
+                  Vrienden sinds dag één. Nu bouwen we samen websites.
+                </p>
               </div>
             </div>
           </motion.div>
 
-          {/* Text card */}
+          {/* Story card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="md:col-span-5 bg-slate-50 border border-slate-100 rounded-3xl p-8 md:p-10 flex flex-col justify-between"
+            className="md:col-span-4 bg-slate-950 text-white rounded-3xl p-8 md:p-10 flex flex-col justify-between"
           >
             <div>
-              <p className="text-2xl md:text-3xl font-bold leading-tight text-slate-900 mb-6">
-                Wij zijn Ahmad, Kerim & Nawdar.
-              </p>
-              <p className="text-slate-500 leading-relaxed">
-                Het internet verandert snel. Wat 5 jaar geleden werkte, kost je nu klanten. Wij zijn drie vrienden die webdesign anders aanpakken: geen logge bureaucratie, maar directe lijnen en pure creativiteit.
+              <div className="w-12 h-12 rounded-2xl bg-violet-600 flex items-center justify-center mb-6">
+                <span className="font-display font-bold text-lg">ez</span>
+              </div>
+              <h3 className="font-display font-bold text-2xl md:text-3xl uppercase mb-4 leading-tight">
+                Ons verhaal
+              </h3>
+              <p className="text-white/50 leading-relaxed text-sm md:text-base">
+                Het begon als een idee tussen vrienden: "Wij kunnen dit beter." Geen dure kantoren, geen ingewikkelde processen. Gewoon drie guys die houden van mooi design en niet stoppen tot het perfect is.
               </p>
             </div>
-            <div className="mt-8 inline-flex items-center gap-3 px-5 py-3 bg-violet-600 text-white rounded-full w-fit">
-              <span className="font-display font-bold text-sm uppercase tracking-wider">Since 2024</span>
+            <div className="mt-8 pt-6 border-t border-white/10">
+              <span className="font-display font-bold text-sm uppercase tracking-widest text-violet-400">Since 2024</span>
             </div>
           </motion.div>
 
-          {/* Stat cards row */}
-          {[
-            { icon: <Clock className="w-5 h-5" />, value: "24/7", label: "Beschikbaarheid", desc: "Altijd bereikbaar" },
-            { icon: <Heart className="w-5 h-5" />, value: "100%", label: "Tevredenheid", desc: "Garantie op resultaat" },
-            { icon: <Users className="w-5 h-5" />, value: "3", label: "Creatievelingen", desc: "Klein & persoonlijk" },
-            { icon: <Zap className="w-5 h-5" />, value: "<7d", label: "Levertijd", desc: "Snel opgeleverd" },
-          ].map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 + i * 0.05 }}
-              className="md:col-span-3 bg-slate-50 border border-slate-100 rounded-3xl p-6 md:p-8 group hover:bg-violet-600 hover:border-violet-600 transition-all duration-300"
-            >
-              <div className="w-10 h-10 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center mb-4 group-hover:bg-white/20 group-hover:text-white transition-colors">
-                {stat.icon}
-              </div>
-              <div className="font-display font-bold text-3xl md:text-4xl text-slate-900 group-hover:text-white transition-colors mb-1">
-                {stat.value}
-              </div>
-              <div className="text-xs font-bold uppercase tracking-widest text-slate-400 group-hover:text-white/70 transition-colors mb-2">
-                {stat.label}
-              </div>
-              <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors">
-                {stat.desc}
+          {/* Values row */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="md:col-span-4 bg-violet-600 text-white rounded-3xl p-8 md:p-10 flex flex-col justify-between"
+          >
+            <div className="text-5xl md:text-6xl font-display font-bold leading-none mb-4">24/7</div>
+            <div>
+              <h4 className="font-bold text-lg mb-2">Altijd bereikbaar</h4>
+              <p className="text-white/70 text-sm leading-relaxed">
+                Stuur een berichtje om 3 uur 's nachts? Wij antwoorden. Geen wachttijden, geen ticketsystemen.
               </p>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="md:col-span-4 bg-slate-50 border border-slate-100 rounded-3xl p-8 md:p-10 flex flex-col justify-between"
+          >
+            <div className="text-5xl md:text-6xl font-display font-bold leading-none mb-4 text-slate-900">100%</div>
+            <div>
+              <h4 className="font-bold text-lg mb-2 text-slate-900">Eerlijk & persoonlijk</h4>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Geen verkooppraatjes. We zeggen eerlijk wat we ervan vinden en denken met je mee alsof het ons eigen project is.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.25 }}
+            className="md:col-span-4 bg-slate-50 border border-slate-100 rounded-3xl p-8 md:p-10 flex flex-col justify-between group hover:bg-slate-950 hover:text-white hover:border-slate-950 transition-all duration-500"
+          >
+            <div className="text-5xl md:text-6xl font-display font-bold leading-none mb-4">
+              <span className="group-hover:text-violet-400 transition-colors">∞</span>
+            </div>
+            <div>
+              <h4 className="font-bold text-lg mb-2">Passie zonder limiet</h4>
+              <p className="text-slate-500 group-hover:text-white/60 text-sm leading-relaxed transition-colors">
+                We doen dit niet voor het geld. We doen dit omdat we het vet vinden. En dat zie je terug in elk pixel.
+              </p>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
