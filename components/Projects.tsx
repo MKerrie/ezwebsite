@@ -90,8 +90,8 @@ const Projects: React.FC = () => {
             <h2 className="text-[14vw] md:text-9xl font-display font-bold uppercase tracking-tighter leading-[0.75] mb-2">
               Premium
             </h2>
-            <h2 className="text-[14vw] md:text-9xl font-display font-bold uppercase tracking-tighter leading-[0.75] text-stroke opacity-30">
-              Portefeuille.
+            <h2 className="text-[14vw] md:text-9xl font-display font-bold uppercase tracking-tighter leading-[0.75] text-slate-200">
+              Portfolio.
             </h2>
           </motion.div>
         </div>
