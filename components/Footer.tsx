@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import Logo from './Logo';
 import Marquee from './Marquee';
@@ -54,7 +53,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Right - Links */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-16">
+          <div className="grid grid-cols-2 gap-10 md:gap-16">
             <div>
               <h4 className="text-xs font-bold uppercase tracking-widest text-white/30 mb-6">Sitemap</h4>
               <ul className="space-y-3">
@@ -74,24 +73,9 @@ const Footer: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-widest text-white/30 mb-6">Socials</h4>
-              <ul className="space-y-3">
-                {['Instagram', 'LinkedIn', 'Dribbble', 'Twitter'].map((name) => (
-                  <li key={name}>
-                    <a href="#" className="text-white/60 hover:text-violet-400 transition-colors font-medium flex items-center gap-1 group">
-                      {name}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
               <h4 className="text-xs font-bold uppercase tracking-widest text-white/30 mb-6">Contact</h4>
-              <a href="mailto:info@ezwebsite.nl" className="block text-white/60 hover:text-violet-400 transition-colors font-medium mb-2">info@ezwebsite.nl</a>
-              <a href="tel:+31612345678" className="block text-white/60 hover:text-violet-400 transition-colors font-medium mb-4">+31 6 1234 5678</a>
-              <p className="text-white/30 text-sm">Amsterdam, Nederland</p>
+              <a href="mailto:info@ezwebsite.nl" className="block text-white/60 hover:text-violet-400 transition-colors font-medium mb-4">info@ezwebsite.nl</a>
+              <p className="text-white/30 text-sm">Nederland</p>
             </div>
           </div>
         </div>
@@ -102,7 +86,7 @@ const Footer: React.FC = () => {
             <Logo light />
           </div>
           <div className="text-white/30 text-sm">
-            &copy; {new Date().getFullYear()} ezwebsite. All rights reserved.
+            Gemaakt met passie door Ahmad, Kerim & Nawdar
           </div>
         </div>
       </div>

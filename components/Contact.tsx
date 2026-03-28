@@ -100,18 +100,6 @@ const Contact: React.FC = () => {
                 </div>
               </a>
               
-              <a href="tel:+31612345678" className="flex items-center space-x-6 group cursor-pointer w-fit max-w-full">
-                <motion.div 
-                   whileHover={{ rotate: -15, scale: 1.1 }}
-                   className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 group-hover:bg-violet-600 group-hover:text-white group-hover:border-violet-600 transition-all duration-300 shadow-md"
-                >
-                  <Phone className="w-5 h-5" />
-                </motion.div>
-                <div className="overflow-hidden">
-                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Telefoon (24/7)</p>
-                  <p className="font-display font-bold text-lg md:text-2xl group-hover:text-violet-500 transition-colors truncate">+31 6 1234 5678</p>
-                </div>
-              </a>
             </div>
           </div>
 
