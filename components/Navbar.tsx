@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
           visible: { y: 0, opacity: 1 },
           hidden: { y: -100, opacity: 0 },
         }}
-        animate={hidden ? "hidden" : "visible"}
+        animate="visible"
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none"
       >

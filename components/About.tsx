@@ -77,7 +77,7 @@ const About: React.FC = () => {
                 Ons verhaal
               </h3>
               <p className="text-white/50 leading-relaxed text-sm md:text-base">
-                Het begon als een idee tussen vrienden: "Wij kunnen dit beter." Geen dure kantoren, geen ingewikkelde processen. Gewoon drie guys die houden van mooi design en niet stoppen tot het perfect is.
+                Drie studenten uit dezelfde klas met één gedeelde obsessie: het internet. Terwijl anderen huiswerk maken, bouwen wij websites. Jong, hongerig en met meer ambitie dan de meeste bureaus. Wij bewijzen dat leeftijd niks zegt — alleen het resultaat telt.
               </p>
             </div>
             <div className="mt-8 pt-6 border-t border-white/10">
