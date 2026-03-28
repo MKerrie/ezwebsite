@@ -31,7 +31,7 @@ const About: React.FC = () => {
                 className="rounded-2xl shadow-2xl relative z-10 w-full object-cover aspect-[4/3] filter grayscale hover:grayscale-0 transition-all duration-700"
               />
               {/* Floating Badge Mobile & Desktop */}
-              <div className="absolute -bottom-4 right-4 md:-bottom-8 md:-right-8 bg-blue-600 text-white p-4 md:p-8 rounded-2xl md:rounded-full flex items-center justify-center z-20 shadow-xl shadow-blue-900/20">
+              <div className="absolute -bottom-4 right-4 md:-bottom-8 md:-right-8 bg-violet-600 text-white p-4 md:p-8 rounded-2xl md:rounded-full flex items-center justify-center z-20 shadow-xl shadow-violet-900/20">
                  <span className="font-display font-bold text-sm md:text-xl leading-none text-center">
                    SINCE<br/>2024
                  </span>
@@ -46,10 +46,10 @@ const About: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 w-full mt-4 md:mt-0"
           >
-            <span className="text-blue-600 font-bold tracking-widest uppercase mb-3 block text-xs md:text-base">Over Ons</span>
+            <span className="text-violet-600 font-bold tracking-widest uppercase mb-3 block text-xs md:text-base">Over Ons</span>
             <h2 className="font-display font-bold text-5xl md:text-7xl uppercase leading-[0.9] mb-6 md:mb-8 break-words">
               WIJ MAKEN HET <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-black dark:to-white">Eenvoudig.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-black dark:to-white">Eenvoudig.</span>
             </h2>
             
             <p className="text-lg md:text-3xl font-bold mb-6 md:mb-8 leading-tight text-slate-900 dark:text-white">
@@ -62,11 +62,11 @@ const About: React.FC = () => {
             {/* Mobile Stats Bar */}
             <div className="grid grid-cols-2 gap-4 mt-8 bg-white dark:bg-white/5 p-4 rounded-2xl border border-slate-200 dark:border-white/5">
               <div className="text-center p-2">
-                <h4 className="font-display font-bold text-3xl md:text-4xl mb-1 text-blue-600">24/7</h4>
+                <h4 className="font-display font-bold text-3xl md:text-4xl mb-1 text-violet-600">24/7</h4>
                 <p className="text-[10px] md:text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-gray-500">Beschikbaarheid</p>
               </div>
               <div className="text-center p-2 border-l border-slate-100 dark:border-white/10">
-                <h4 className="font-display font-bold text-3xl md:text-4xl mb-1 text-blue-600">100%</h4>
+                <h4 className="font-display font-bold text-3xl md:text-4xl mb-1 text-violet-600">100%</h4>
                 <p className="text-[10px] md:text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-gray-500">Tevredenheid</p>
               </div>
             </div>

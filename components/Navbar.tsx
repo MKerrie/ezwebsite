@@ -103,7 +103,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
             <a
               href="#contact"
               onClick={(e) => handleScroll(e, '#contact')}
-              className="group flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-black px-6 py-3 rounded-full font-display font-bold text-sm uppercase tracking-wider hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white dark:hover:text-white transition-all duration-300 shadow-lg shadow-blue-900/20 dark:shadow-none"
+              className="group flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-black px-6 py-3 rounded-full font-display font-bold text-sm uppercase tracking-wider hover:bg-violet-600 dark:hover:bg-violet-600 hover:text-white dark:hover:text-white transition-all duration-300 shadow-lg shadow-violet-900/20 dark:shadow-none"
             >
               Start Project
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -141,7 +141,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScroll(e, link.href)}
-                className="text-4xl font-display font-bold text-slate-900 dark:text-white uppercase hover:text-blue-500 transition-colors"
+                className="text-4xl font-display font-bold text-slate-900 dark:text-white uppercase hover:text-violet-500 transition-colors"
               >
                 {link.name}
               </a>
@@ -150,7 +150,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme }) => {
             <a
               href="#contact"
               onClick={(e) => handleScroll(e, '#contact')}
-              className="w-full bg-slate-900 dark:bg-white text-white dark:text-black text-center py-4 rounded-full font-display font-bold text-xl uppercase hover:bg-blue-600 hover:text-white transition-colors"
+              className="w-full bg-slate-900 dark:bg-white text-white dark:text-black text-center py-4 rounded-full font-display font-bold text-xl uppercase hover:bg-violet-600 hover:text-white transition-colors"
             >
               Start Project
             </a>
