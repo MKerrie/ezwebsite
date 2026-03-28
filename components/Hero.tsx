@@ -204,7 +204,7 @@ const Hero: React.FC = () => {
             x: { duration: 0 }, // Handled by mouse
             y: { duration: 0 }  // Handled by mouse
           }}
-          className="absolute top-[-10%] md:top-[-20%] left-1/2 -translate-x-1/2 w-[120vw] h-[120vw] md:w-[80vw] md:h-[80vw] bg-fuchsia-600/15 blur-[80px] md:blur-[120px] rounded-full mix-blend-multiply transition-transform duration-100 ease-out" 
+          className="absolute top-[-10%] md:top-[-20%] left-1/2 -translate-x-1/2 w-[120vw] h-[120vw] md:w-[80vw] md:h-[80vw] bg-violet-600/15 blur-[80px] md:blur-[120px] rounded-full mix-blend-multiply transition-transform duration-100 ease-out" 
         />
         
         {/* Secondary Glow - Purple */}
@@ -233,10 +233,10 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/5 backdrop-blur-md mb-6 md:mb-8"
+            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-violet-500/20 bg-violet-500/5 backdrop-blur-md mb-6 md:mb-8"
           >
-            <Sparkles className="w-3 h-3 text-fuchsia-500" />
-            <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-fuchsia-600">
+            <Sparkles className="w-3 h-3 text-violet-500" />
+            <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-violet-600">
               High-End Digital Agency
             </span>
           </motion.div>
@@ -246,7 +246,7 @@ const Hero: React.FC = () => {
              <div className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-slate-900 uppercase overflow-hidden">
                <StaggeredText text="DIGITALE" delayStart={0} />
              </div>
-             <div className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 via-indigo-500 to-purple-600 uppercase pb-2 md:pb-4 overflow-hidden">
+             <div className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-indigo-500 to-purple-600 uppercase pb-2 md:pb-4 overflow-hidden">
                 <StaggeredText text="IMPACT." delayStart={0.3} />
              </div>
              
@@ -281,7 +281,7 @@ const Hero: React.FC = () => {
             <a 
               href="#projects"
               onClick={(e) => handleScroll(e, '#projects')}
-              className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-slate-900 text-white rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform shadow-lg shadow-fuchsia-500/20 text-center text-sm md:text-base"
+              className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-slate-900 text-white rounded-full font-bold uppercase tracking-wider hover:scale-105 transition-transform shadow-lg shadow-violet-500/20 text-center text-sm md:text-base"
             >
               Bekijk Werk
             </a>
@@ -290,7 +290,7 @@ const Hero: React.FC = () => {
               onClick={(e) => handleScroll(e, '#contact')}
               className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-transparent border border-slate-200 text-slate-900 rounded-full font-bold uppercase tracking-wider hover:bg-slate-50 transition-colors flex items-center justify-center gap-2 group text-center text-sm md:text-base"
             >
-              <div className="w-6 h-6 rounded-full bg-fuchsia-600 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+              <div className="w-6 h-6 rounded-full bg-violet-600 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                 <Play className="w-2.5 h-2.5 fill-current" />
               </div>
               Start Project
@@ -335,7 +335,7 @@ const Hero: React.FC = () => {
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                         className="absolute bottom-4 left-4 md:bottom-12 md:left-12 bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-6 rounded-xl md:rounded-2xl max-w-[140px] md:max-w-xs"
                     >
-                        <div className="h-1.5 md:h-2 w-8 md:w-12 bg-fuchsia-500 rounded-full mb-2 md:mb-3" />
+                        <div className="h-1.5 md:h-2 w-8 md:w-12 bg-violet-500 rounded-full mb-2 md:mb-3" />
                         <div className="h-1.5 md:h-2 w-full bg-white/20 rounded-full mb-1.5 md:mb-2" />
                         <div className="h-1.5 md:h-2 w-2/3 bg-white/20 rounded-full" />
                     </motion.div>
@@ -343,7 +343,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Reflection / Shadow */}
-            <div className="absolute -bottom-10 left-[5%] w-[90%] h-10 bg-fuchsia-500/20 blur-[50px] rounded-[100%]" />
+            <div className="absolute -bottom-10 left-[5%] w-[90%] h-10 bg-violet-500/20 blur-[50px] rounded-[100%]" />
           </motion.div>
 
         </motion.div>

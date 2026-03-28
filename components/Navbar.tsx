@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
             <a
               href="#contact"
               onClick={(e) => handleScroll(e, '#contact')}
-              className="group flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-full font-display font-bold text-sm uppercase tracking-wider hover:bg-fuchsia-600 hover:text-white transition-all duration-300 shadow-lg shadow-fuchsia-900/20"
+              className="group flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-full font-display font-bold text-sm uppercase tracking-wider hover:bg-violet-600 hover:text-white transition-all duration-300 shadow-lg shadow-violet-900/20"
             >
               Start Project
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -122,7 +122,7 @@ const Navbar: React.FC = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScroll(e, link.href)}
-                className="text-4xl font-display font-bold text-slate-900 uppercase hover:text-fuchsia-500 transition-colors"
+                className="text-4xl font-display font-bold text-slate-900 uppercase hover:text-violet-500 transition-colors"
               >
                 {link.name}
               </a>
@@ -131,7 +131,7 @@ const Navbar: React.FC = () => {
             <a
               href="#contact"
               onClick={(e) => handleScroll(e, '#contact')}
-              className="w-full bg-slate-900 text-white text-center py-4 rounded-full font-display font-bold text-xl uppercase hover:bg-fuchsia-600 hover:text-white transition-colors"
+              className="w-full bg-slate-900 text-white text-center py-4 rounded-full font-display font-bold text-xl uppercase hover:bg-violet-600 hover:text-white transition-colors"
             >
               Start Project
             </a>
