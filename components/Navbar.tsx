@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X, ArrowUpRight, Globe } from 'lucide-react';
 import Logo from './Logo';
@@ -23,6 +23,8 @@ const Navbar: React.FC = () => {
 
   const navigate = useNavigate();
 
+  const location = useLocation();
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsMobileOpen(false);
@@ -33,14 +35,24 @@ const Navbar: React.FC = () => {
       return;
     }
 
+    const isHome = location.pathname === '/' || location.pathname === '/ezwebsite/' || location.pathname === '/ezwebsite';
+
     if (href === '#') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (isHome) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        navigate('/');
+      }
       return;
     }
 
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (isHome) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/' + href);
     }
   };
 
