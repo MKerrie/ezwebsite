@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { projects } from '../data/projects';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -10,7 +10,6 @@ const ProjectDetail: React.FC = () => {
   const navigate = useNavigate();
   const { lang, t } = useLanguage();
   const project = projects.find(p => p.title.toLowerCase().replace(/\s+/g, '-') === slug);
-  const [activeImg, setActiveImg] = useState(0);
 
   if (!project) {
     return (
@@ -47,74 +46,8 @@ const ProjectDetail: React.FC = () => {
         </button>
       </div>
 
-      {/* Hero image */}
-      <div className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden bg-black">
-        {/* Blurred background */}
-        <img
-          src={images[activeImg]}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-40"
-        />
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={activeImg}
-            src={images[activeImg]}
-            alt={project.title}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="absolute inset-0 w-full h-full object-contain"
-          />
-        </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
-
-        {/* Prev/Next arrows */}
-        {images.length > 1 && (
-          <>
-            <button
-              onClick={() => setActiveImg(i => (i - 1 + images.length) % images.length)}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-black/60 transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={() => setActiveImg(i => (i + 1) % images.length)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-black/60 transition-colors"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </>
-        )}
-
-        {/* Dot indicators */}
-        {images.length > 1 && (
-          <div className="absolute bottom-6 right-6 flex gap-2">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveImg(i)}
-                className={`h-1.5 rounded-full transition-all ${i === activeImg ? 'bg-white w-6' : 'bg-white/40 w-1.5'}`}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Thumbnail strip */}
-      {images.length > 1 && (
-        <div className="flex gap-3 px-6 md:px-16 pt-6 overflow-x-auto scrollbar-none">
-          {images.map((img, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveImg(i)}
-              className={`shrink-0 w-20 h-14 md:w-28 md:h-18 rounded-xl overflow-hidden border-2 transition-all ${i === activeImg ? 'border-violet-500' : 'border-transparent opacity-50 hover:opacity-80'}`}
-            >
-              <img src={img} alt="" className="w-full h-full object-cover" />
-            </button>
-          ))}
-        </div>
-      )}
+      {/* Spacer for back button */}
+      <div className="h-24" />
 
       {/* Main content */}
       <div className="container mx-auto px-6 md:px-16 py-12 md:py-16">
