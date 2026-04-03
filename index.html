@@ -77,6 +77,18 @@
         font-family: 'Manrope', sans-serif;
       }
 
+      /* Hide scrollbar globally on mobile */
+      @media (max-width: 768px) {
+        html,
+        body,
+        * {
+          scrollbar-width: none;
+        }
+        ::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
       .no-scrollbar::-webkit-scrollbar {
           display: none;
       }
@@ -128,7 +140,7 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/ezwebsite/assets/index-dFUNGMLE.js"></script>
+  <script type="module" crossorigin src="/ezwebsite/assets/index-BM4xarCY.js"></script>
 </head>
   <body>
     <div id="root"></div>
