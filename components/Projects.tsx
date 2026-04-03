@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, Plus } from 'lucide-react';
@@ -79,45 +79,117 @@ const ProjectCardDesktop: React.FC<{ project: (typeof projects)[0]; index: numbe
   const { lang, t } = useLanguage();
   const projectIndex = project.id - 1;
   const description = t.projectData[projectIndex]?.description[lang] ?? project.description;
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  }, []);
+
+  const tiltX = isHovered ? ((mousePos.y / (cardRef.current?.offsetHeight ?? 1)) - 0.5) * -8 : 0;
+  const tiltY = isHovered ? ((mousePos.x / (cardRef.current?.offsetWidth ?? 1)) - 0.5) * 8 : 0;
 
   return (
     <motion.div
-      key={project.id}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
+      style={{ perspective: 800 }}
     >
-      <Link to={`/project/${toSlug(project.title)}`} className="group block w-full">
-        <div className="relative rounded-[2rem] overflow-hidden bg-slate-950 border border-slate-800 group-hover:border-violet-500/40 transition-all duration-500 shadow-xl group-hover:shadow-2xl group-hover:shadow-violet-500/10">
+      <Link to={`/project/${toSlug(project.title)}`} className="block w-full">
+        <motion.div
+          ref={cardRef}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          animate={{
+            rotateX: tiltX,
+            rotateY: tiltY,
+          }}
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          className="relative rounded-[2rem] overflow-hidden bg-slate-950 border border-slate-800/80 shadow-xl"
+          style={{ transformStyle: 'preserve-3d' }}
+        >
+          {/* Mouse-tracking spotlight glow */}
+          <div
+            className="pointer-events-none absolute inset-0 z-20 transition-opacity duration-500"
+            style={{
+              opacity: isHovered ? 1 : 0,
+              background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(124,58,237,0.12), transparent 40%)`,
+            }}
+          />
+          {/* Border glow that follows mouse */}
+          <div
+            className="pointer-events-none absolute inset-0 z-20 rounded-[2rem] transition-opacity duration-500"
+            style={{
+              opacity: isHovered ? 1 : 0,
+              background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(124,58,237,0.25), transparent 40%)`,
+              mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              maskComposite: 'exclude',
+              WebkitMaskComposite: 'xor',
+              padding: '1px',
+            }}
+          />
+
+          {/* Mockup image area */}
           <div className="relative overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-950 pt-4 px-4 lg:px-6">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-32 bg-violet-600/10 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            {/* Top ambient glow */}
+            <div
+              className="absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-32 bg-violet-600/10 blur-[80px] rounded-full transition-opacity duration-700"
+              style={{ opacity: isHovered ? 1 : 0 }}
+            />
             {project.mockupImage ? (
-              <img
+              <motion.img
                 src={project.mockupImage}
                 alt={`${project.title} multi-device mockup`}
-                className="w-full h-auto block relative z-10 group-hover:scale-[1.04] group-hover:-translate-y-1 transition-all duration-500 drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+                className="w-full h-auto block relative z-10 drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+                animate={{
+                  scale: isHovered ? 1.04 : 1,
+                  y: isHovered ? -4 : 0,
+                }}
+                transition={{ type: 'spring', stiffness: 200, damping: 25 }}
               />
             ) : (
-              <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl aspect-[16/10] group-hover:scale-[1.03] transition-transform duration-500">
+              <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl aspect-[16/10]">
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover object-top" />
               </div>
             )}
           </div>
+
+          {/* Info */}
           <div className="relative z-10 p-6 lg:p-8 flex items-end justify-between gap-4">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <span className="px-3 py-1 rounded-full bg-violet-500/20 border border-violet-500/30 text-[9px] font-bold uppercase tracking-[0.2em] text-violet-400">{project.category}</span>
+                <span className="px-3 py-1 rounded-full bg-violet-500/20 border border-violet-500/30 text-[9px] font-bold uppercase tracking-[0.2em] text-violet-400">
+                  {project.category}
+                </span>
                 <span className="text-slate-500 text-xs font-bold">{project.year}</span>
               </div>
-              <h3 className="font-display font-bold text-2xl lg:text-3xl uppercase text-white group-hover:text-violet-400 transition-colors tracking-tight mb-1">{project.title}</h3>
+              <h3 className="font-display font-bold text-2xl lg:text-3xl uppercase text-white tracking-tight mb-1" style={{ transition: 'color 0.3s' }}>
+                <span style={{ color: isHovered ? '#a78bfa' : '#ffffff' }}>{project.title}</span>
+              </h3>
               <p className="text-slate-500 text-sm leading-relaxed line-clamp-1">{description}</p>
             </div>
-            <div className="shrink-0 w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-violet-600 group-hover:border-violet-600 transition-all">
+            <motion.div
+              className="shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-white border"
+              animate={{
+                backgroundColor: isHovered ? 'rgba(124,58,237,1)' : 'rgba(255,255,255,0.05)',
+                borderColor: isHovered ? 'rgba(124,58,237,1)' : 'rgba(255,255,255,0.1)',
+                rotate: isHovered ? 45 : 0,
+              }}
+              transition={{ duration: 0.3 }}
+            >
               <ArrowUpRight className="w-4 h-4" />
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </Link>
     </motion.div>
   );
