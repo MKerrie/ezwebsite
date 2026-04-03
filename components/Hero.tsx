@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'fram
 import { useSEO } from '../hooks/useSEO';
 import { Play, Sparkles } from 'lucide-react';
 import Marquee from './Marquee';
+import { useLanguage } from '../i18n/LanguageContext';
 
 // --- Animated Gradient Mesh ---
 const GradientMesh = () => {
@@ -86,6 +87,7 @@ const AnimatedCounter = ({ value, suffix = "" }: { value: string, suffix?: strin
 
 const Hero: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
+  const { lang, t } = useLanguage();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"]
@@ -96,7 +98,7 @@ const Hero: React.FC = () => {
   const opacity = useTransform(smoothProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(smoothProgress, [0, 0.5], [1, 0.9]);
 
-  useSEO(ref, "ezwebsite | Next Level Web Design", "Wij transformeren jouw visie naar een digitale ervaring die de concurrentie doet verbleken.");
+  useSEO(ref, t.hero.seoTitle[lang], t.hero.seoDesc[lang]);
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -124,17 +126,17 @@ const Hero: React.FC = () => {
           >
             <Sparkles className="w-3.5 h-3.5 text-violet-600" />
             <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-violet-700">
-              High-End Digital Agency
+              {t.hero.badge[lang]}
             </span>
           </motion.div>
 
           {/* HEADLINE */}
           <div className="relative mb-6 md:mb-8 flex flex-col items-center w-full">
             <div className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-slate-900 uppercase overflow-hidden">
-              <StaggeredText text="DIGITALE" delayStart={0} />
+              <StaggeredText text={t.hero.headline1[lang]} delayStart={0} />
             </div>
             <div className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-purple-500 to-violet-700 uppercase pb-2 md:pb-4 overflow-hidden">
-              <StaggeredText text="IMPACT." delayStart={0.3} />
+              <StaggeredText text={t.hero.headline2[lang]} delayStart={0.3} />
             </div>
           </div>
 
@@ -145,7 +147,7 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="text-base md:text-xl text-slate-500 max-w-xl leading-relaxed font-light mb-8 md:mb-10 px-4"
           >
-            Je website is je digitale visitekaartje. Wij transformeren jouw visie naar een ervaring die <span className="text-slate-900 font-medium">blijft hangen</span>.
+            {t.hero.subtext[lang]} <span className="text-slate-900 font-medium">{t.hero.subtextBold[lang]}</span>.
           </motion.p>
 
           {/* Buttons */}
@@ -160,7 +162,7 @@ const Hero: React.FC = () => {
               onClick={(e) => handleScroll(e, '#projects')}
               className="w-full sm:w-auto px-8 py-3.5 md:py-4 bg-slate-900 text-white rounded-full font-bold uppercase tracking-wider hover:scale-105 hover:shadow-xl hover:shadow-violet-500/20 transition-all text-center text-sm md:text-base"
             >
-              Bekijk Werk
+              {t.hero.viewWork[lang]}
             </a>
             <a
               href="#contact"
@@ -170,7 +172,7 @@ const Hero: React.FC = () => {
               <div className="w-6 h-6 rounded-full bg-violet-600 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                 <Play className="w-2.5 h-2.5 fill-current" />
               </div>
-              Start Project
+              {t.nav.startProject[lang]}
             </a>
           </motion.div>
 
@@ -182,9 +184,9 @@ const Hero: React.FC = () => {
             className="flex items-center gap-8 md:gap-16 mt-12 md:mt-16"
           >
             {[
-              { value: "24/7", label: "Bereikbaar" },
-              { value: "100%", label: "Maatwerk" },
-              { value: "3", label: "Creatievelingen" },
+              { value: "24/7", label: t.hero.stats.available[lang] },
+              { value: "100%", label: t.hero.stats.custom[lang] },
+              { value: "3", label: t.hero.stats.creatives[lang] },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl md:text-4xl font-display font-bold text-slate-900">{stat.value}</div>

@@ -19,6 +19,7 @@ import Footer from './components/Footer';
 import CursorEffects from './components/CursorEffects';
 import ScrollToTop from './components/ScrollToTop';
 import ProjectDetail from './pages/ProjectDetail';
+import ProjectsPage from './pages/ProjectsPage';
 
 const HomePage: React.FC = () => (
   <div className="antialiased selection:bg-violet-500 selection:text-white font-sans bg-white text-slate-900">
@@ -44,6 +45,7 @@ const App: React.FC = () => {
       <ScrollToTopOnNavigate />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/projecten" element={<ProjectsPage />} />
         <Route
           path="/project/:slug"
           element={

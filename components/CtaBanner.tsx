@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const CtaBanner: React.FC = () => {
+  const { lang, t } = useLanguage();
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -37,23 +39,23 @@ const CtaBanner: React.FC = () => {
             >
               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/80">
-                Beschikbaar voor nieuwe projecten
+                {t.cta.badge[lang]}
               </span>
             </motion.div>
 
             <h2 className="font-display font-bold text-4xl md:text-7xl lg:text-8xl uppercase leading-[0.85] tracking-tighter mb-6 md:mb-8">
-              Laten we iets <br />
-              moois maken.
+              {t.cta.headline1[lang]} <br />
+              {t.cta.headline2[lang]}
             </h2>
             <p className="text-white/60 text-base md:text-lg max-w-lg mx-auto mb-10 leading-relaxed">
-              Geen verplichtingen, geen verborgen kosten. Gewoon een goed gesprek over jouw idee.
+              {t.cta.subtext[lang]}
             </p>
             <a
               href="#contact"
               onClick={(e) => handleScroll(e, '#contact')}
               className="group inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-white text-violet-700 rounded-full font-display font-bold uppercase tracking-wider text-sm md:text-base hover:bg-white/90 hover:scale-105 transition-all shadow-2xl shadow-black/20"
             >
-              Neem contact op
+              {t.cta.button[lang]}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

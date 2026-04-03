@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Marquee from './Marquee';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const LogoCloud: React.FC = () => {
+  const { lang, t } = useLanguage();
+
   return (
     <section className="py-16 md:py-20 bg-slate-50 border-y border-slate-100 overflow-hidden">
       {/* Skills marquee */}
@@ -24,10 +27,10 @@ const LogoCloud: React.FC = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4"
         >
           {[
-            { value: "24/7", label: "Beschikbaarheid" },
-            { value: "100%", label: "Maatwerk" },
-            { value: "<7d", label: "Levertijd" },
-            { value: "€0", label: "Vrijblijvend gesprek" },
+            { value: "24/7", label: t.logoCloud.stats.availability[lang] },
+            { value: "100%", label: t.logoCloud.stats.custom[lang] },
+            { value: "<7d", label: t.logoCloud.stats.delivery[lang] },
+            { value: "€0", label: t.logoCloud.stats.freeConsult[lang] },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="font-display font-bold text-3xl md:text-5xl text-slate-900 mb-1">{stat.value}</div>

@@ -13,6 +13,7 @@ export interface Project {
   url?: string;
   canEmbed?: boolean;
   screenshot?: string;
+  mockupImage?: string;
   images?: string[];
 }
 

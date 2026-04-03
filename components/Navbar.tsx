@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Globe } from 'lucide-react';
 import Logo from './Logo';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Navbar: React.FC = () => {
   const [hidden, setHidden] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const { scrollY } = useScroll();
+  const { lang, setLang, t } = useLanguage();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
@@ -18,9 +21,17 @@ const Navbar: React.FC = () => {
     }
   });
 
+  const navigate = useNavigate();
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsMobileOpen(false);
+
+    // Route-based links (not anchor links)
+    if (!href.startsWith('#')) {
+      navigate(href);
+      return;
+    }
 
     if (href === '#') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -34,11 +45,13 @@ const Navbar: React.FC = () => {
   };
 
   const links = [
-    { name: 'Home', href: '#' },
-    { name: 'Over Ons', href: '#about' },
-    { name: 'Diensten', href: '#services' },
-    { name: 'Projecten', href: '#projects' },
+    { name: t.nav.home[lang], href: '#' },
+    { name: t.nav.about[lang], href: '#about' },
+    { name: t.nav.services[lang], href: '#services' },
+    { name: t.nav.projects[lang], href: '/projecten' },
   ];
+
+  const toggleLang = () => setLang(lang === 'nl' ? 'en' : 'nl');
 
   return (
     <>
@@ -87,18 +100,33 @@ const Navbar: React.FC = () => {
 
           {/* Actions */}
           <div className="hidden md:flex items-center justify-end flex-1 gap-3">
+            <button
+              onClick={toggleLang}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-bold font-display uppercase tracking-wider text-slate-500 hover:text-violet-600 hover:bg-violet-50 transition-all"
+              title={lang === 'nl' ? 'Switch to English' : 'Schakel naar Nederlands'}
+            >
+              <Globe className="w-4 h-4" />
+              {lang === 'nl' ? 'EN' : 'NL'}
+            </button>
             <a
               href="#contact"
               onClick={(e) => handleScroll(e, '#contact')}
               className="group flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-full font-display font-bold text-sm uppercase tracking-wider hover:bg-violet-600 hover:text-white transition-all duration-300 shadow-lg shadow-violet-900/20"
             >
-              Start Project
+              {t.nav.startProject[lang]}
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
 
           {/* Mobile Toggle */}
           <div className="md:hidden flex-1 flex justify-end gap-4 items-center">
+             <button
+                onClick={toggleLang}
+                className="flex items-center gap-1 px-2 py-1.5 rounded-full text-xs font-bold font-display uppercase tracking-wider text-slate-500 hover:text-violet-600 transition-all"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                {lang === 'nl' ? 'EN' : 'NL'}
+              </button>
              <button
                 className="text-black p-2"
                 onClick={() => setIsMobileOpen(!isMobileOpen)}
@@ -133,7 +161,7 @@ const Navbar: React.FC = () => {
               onClick={(e) => handleScroll(e, '#contact')}
               className="w-full bg-slate-900 text-white text-center py-4 rounded-full font-display font-bold text-xl uppercase hover:bg-violet-600 hover:text-white transition-colors"
             >
-              Start Project
+              {t.nav.startProject[lang]}
             </a>
           </div>
         </motion.div>

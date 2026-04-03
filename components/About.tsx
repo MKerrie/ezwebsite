@@ -1,14 +1,14 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useSEO } from '../hooks/useSEO';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const About: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
-  useSEO(
-    ref,
-    "Over Ons | ezwebsite - Drie Vrienden, Één Missie",
-    "Ahmad, Kerim en Nawdar. Drie vrienden die samen websites bouwen waar je blij van wordt."
-  );
+  const [storyExpanded, setStoryExpanded] = useState(false);
+  const { lang, t } = useLanguage();
+
+  useSEO(ref, t.about.seoTitle[lang], t.about.seoDesc[lang]);
 
   return (
     <section id="about" ref={ref} className="py-24 md:py-32 bg-white text-slate-900 overflow-hidden">
@@ -21,10 +21,10 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-violet-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Over Ons</span>
+            <span className="text-violet-600 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">{t.about.label[lang]}</span>
             <h2 className="font-display font-bold text-5xl md:text-8xl uppercase leading-[0.85] tracking-tighter max-w-4xl">
-              Geen bureau. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600">Gewoon drie vrienden.</span>
+              {t.about.headline1[lang]} <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-600">{t.about.headline2[lang]}</span>
             </h2>
           </motion.div>
         </div>
@@ -55,7 +55,7 @@ const About: React.FC = () => {
                   ))}
                 </div>
                 <p className="text-white/60 text-sm md:text-base max-w-md">
-                  Vrienden sinds dag één. Nu bouwen we samen websites.
+                  {t.about.tagline[lang]}
                 </p>
               </div>
             </div>
@@ -74,20 +74,28 @@ const About: React.FC = () => {
                 <span className="font-display font-bold text-lg">ez</span>
               </div>
               <h3 className="font-display font-bold text-2xl md:text-3xl uppercase mb-4 leading-tight">
-                Ons verhaal
+                {t.about.storyTitle[lang]}
               </h3>
               <p className="text-white/50 leading-relaxed text-sm md:text-base mb-4">
-                Drie studenten uit dezelfde klas met één gedeelde obsessie: het internet. Terwijl anderen huiswerk maken, bouwen wij websites.
+                {t.about.story1[lang]}
               </p>
-              <p className="text-white/50 leading-relaxed text-sm md:text-base mb-4">
-                Het begon met kleine projectjes voor vrienden en familie. "Kun je even een site maken?" werd al snel "Jullie zijn echt goed hierin." Toen wisten we: dit is wat we willen doen.
-              </p>
-              <p className="text-white/50 leading-relaxed text-sm md:text-base">
-                Jong, hongerig en met meer ambitie dan de meeste bureaus. Wij bewijzen dat leeftijd niks zegt — alleen het resultaat telt. Geen standaard templates, geen saaie oplossingen. Elk project krijgt onze volle aandacht alsof het ons eigen bedrijf is.
-              </p>
+              <div className={`${storyExpanded ? 'block' : 'hidden'} md:block`}>
+                <p className="text-white/50 leading-relaxed text-sm md:text-base mb-4">
+                  {t.about.story2[lang]}
+                </p>
+                <p className="text-white/50 leading-relaxed text-sm md:text-base">
+                  {t.about.story3[lang]}
+                </p>
+              </div>
+              <button
+                onClick={() => setStoryExpanded(!storyExpanded)}
+                className="md:hidden mt-3 text-violet-400 text-sm font-bold uppercase tracking-widest hover:text-violet-300 transition-colors"
+              >
+                {storyExpanded ? t.about.readLess[lang] : t.about.readMore[lang]}
+              </button>
             </div>
             <div className="mt-8 pt-6 border-t border-white/10">
-              <span className="font-display font-bold text-sm uppercase tracking-widest text-violet-400">Since 2024</span>
+              <span className="font-display font-bold text-sm uppercase tracking-widest text-violet-400">{t.about.since[lang]}</span>
             </div>
           </motion.div>
 
@@ -101,9 +109,9 @@ const About: React.FC = () => {
           >
             <div className="text-5xl md:text-6xl font-display font-bold leading-none mb-4">24/7</div>
             <div>
-              <h4 className="font-bold text-lg mb-2">Altijd bereikbaar</h4>
+              <h4 className="font-bold text-lg mb-2">{t.about.value1Title[lang]}</h4>
               <p className="text-white/70 text-sm leading-relaxed">
-                Stuur een berichtje om 3 uur 's nachts? Wij antwoorden. Geen wachttijden, geen ticketsystemen.
+                {t.about.value1Desc[lang]}
               </p>
             </div>
           </motion.div>
@@ -117,9 +125,9 @@ const About: React.FC = () => {
           >
             <div className="text-5xl md:text-6xl font-display font-bold leading-none mb-4 text-slate-900">100%</div>
             <div>
-              <h4 className="font-bold text-lg mb-2 text-slate-900">Eerlijk & persoonlijk</h4>
+              <h4 className="font-bold text-lg mb-2 text-slate-900">{t.about.value2Title[lang]}</h4>
               <p className="text-slate-500 text-sm leading-relaxed">
-                Geen verkooppraatjes. We zeggen eerlijk wat we ervan vinden en denken met je mee alsof het ons eigen project is.
+                {t.about.value2Desc[lang]}
               </p>
             </div>
           </motion.div>
@@ -135,9 +143,9 @@ const About: React.FC = () => {
               <span className="group-hover:text-violet-400 transition-colors">∞</span>
             </div>
             <div>
-              <h4 className="font-bold text-lg mb-2">Passie zonder limiet</h4>
+              <h4 className="font-bold text-lg mb-2">{t.about.value3Title[lang]}</h4>
               <p className="text-slate-500 group-hover:text-white/60 text-sm leading-relaxed transition-colors">
-                We doen dit niet voor het geld. We doen dit omdat we het vet vinden. En dat zie je terug in elk pixel.
+                {t.about.value3Desc[lang]}
               </p>
             </div>
           </motion.div>

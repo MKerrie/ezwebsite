@@ -16,6 +16,7 @@ export const projects: Project[] = [
       "Mobielvriendelijk ontwerp afgestemd op het gele merkidentiteit van YTech"
     ],
     url: "https://ytech.nl",
+    mockupImage: "/ezwebsite/images/mockups/ytech-mockup.png",
     images: [
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop",
@@ -25,6 +26,74 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    title: "AhmadFlex",
+    category: "Web App",
+    image: "/ezwebsite/images/ahmadflex/preview.png",
+    description: "Streaming-geïnspireerd platform voor films en series.",
+    year: "2025",
+    tags: ["React", "API Integration", "Responsive", "UI/UX"],
+    longDescription: "AhmadFlex is een streaming-geïnspireerd platform waarmee bezoekers films en series kunnen ontdekken via spotlight-secties, horizontale rails, browse-pagina's en filterflows voor genres, jaren en talen. De interface is ontworpen om soepel te voelen op desktop, tablet en mobiel, met een focus op browse-ervaring en content-ritmes die aanvoelen als een echte streaming dienst.",
+    highlights: [
+      "Netflix-achtige browse-ervaring met spotlight en rails",
+      "Filter op genre, jaar en taal",
+      "Responsive design voor desktop, tablet en mobiel"
+    ],
+    url: "https://ahmadflex-20260307.netlify.app/",
+    mockupImage: "/ezwebsite/images/mockups/ahmadflex-mockup.png",
+    images: [
+      "/ezwebsite/images/ahmadflex/preview.png",
+      "/ezwebsite/images/ahmadflex/desktop.png",
+    ]
+  },
+  {
+    id: 3,
+    title: "Piccobello",
+    category: "Webdesign",
+    image: "/ezwebsite/images/piccobello/truck-exterior.jpg",
+    description: "Smaakvolle website voor een authentiek snacks- en cateringbedrijf.",
+    year: "2024",
+    tags: ["Webdesign", "WordPress", "SEO", "E-commerce"],
+    longDescription: "Piccobello Snacks is een authentiek bedrijf gespecialiseerd in ambachtelijke snacks en catering. Wij creëerden een levendige en eetlustige website die hun producten, verhaal en bestelmogelijkheden aantrekkelijk presenteert aan particulieren en horecapartners.",
+    highlights: [
+      "Visueel aantrekkelijke productpresentatie met sfeervolle fotografie",
+      "Eenvoudig bestelproces voor catering en afhaal",
+      "Mobielvriendelijk ontwerp afgestemd op het merkidentiteit"
+    ],
+    url: "https://piccobellosnacks.nl/",
+    canEmbed: false,
+    screenshot: "https://www.mkerrie.com/assets/images/piccobello-full.webp",
+    mockupImage: "/ezwebsite/images/mockups/piccobello-mockup.png",
+    images: [
+      "/ezwebsite/images/piccobello/truck-exterior.jpg",
+      "/ezwebsite/images/piccobello/foodtruck-snacks.jpg",
+      "/ezwebsite/images/piccobello/truck-sfeer.jpg",
+      "/ezwebsite/images/piccobello/truck-balie.jpg",
+      "/ezwebsite/images/piccobello/rotterdam-skyline.jpg",
+    ]
+  },
+  {
+    id: 4,
+    title: "Yume Ramen",
+    category: "Web App",
+    image: "/ezwebsite/images/yume-ramen/preview.png",
+    description: "Japanse ramen delivery-app met een unieke visuele stijl.",
+    year: "2025",
+    tags: ["React", "Firebase", "Vite", "Full-Stack"],
+    longDescription: "Yume Ramen is een moderne delivery experience voor een ramenconcept, gebouwd met React en Firebase. De flow voelt direct en app-achtig aan: inloggen als klant, gerechten ontdekken, toppings kiezen, afrekenen en de bestelling live volgen via Firestore-statusupdates. De visuele stijl en interacties zijn bewust sfeervol en duidelijk gehouden, zodat de landing, product customizer, cart en orderstatus samen één rustige maar karaktervolle ervaring vormen.",
+    highlights: [
+      "Realtime orderstatus via Firestore-statusupdates",
+      "Rollen-systeem: klant, chef, bezorger en admin",
+      "Sfeervol Japans design met illustraties en animaties"
+    ],
+    url: "https://yume-ramen.netlify.app/login",
+    mockupImage: "/ezwebsite/images/mockups/yume-mockup.png",
+    images: [
+      "/ezwebsite/images/yume-ramen/preview.png",
+      "/ezwebsite/images/yume-ramen/desktop.png",
+    ]
+  },
+  {
+    id: 5,
     title: "King Airco",
     category: "Webdesign",
     image: "/ezwebsite/images/king-room-1.png",
@@ -38,6 +107,7 @@ export const projects: Project[] = [
       "Snelle laadtijden en mobielvriendelijk ontwerp"
     ],
     url: "https://kingairconditioning.nl/",
+    mockupImage: "/ezwebsite/images/mockups/kingairco-mockup.png",
     images: [
       "/ezwebsite/images/king-room-1.png",
       "/ezwebsite/images/king-buitenunit.webp",
@@ -45,48 +115,24 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 3,
-    title: "Piccobello",
-    category: "Webdesign",
-    image: "/ezwebsite/images/piccobello/rotterdam-skyline.jpg",
-    description: "Smaakvolle website voor een authentiek snacks- en cateringbedrijf.",
-    year: "2024",
-    tags: ["Webdesign", "WordPress", "SEO", "E-commerce"],
-    longDescription: "Piccobello Snacks is een authentiek bedrijf gespecialiseerd in ambachtelijke snacks en catering. Wij creëerden een levendige en eetlustige website die hun producten, verhaal en bestelmogelijkheden aantrekkelijk presenteert aan particulieren en horecapartners.",
+    id: 6,
+    title: "Split Workout",
+    category: "Web App",
+    image: "/ezwebsite/images/split-workout/preview.png",
+    description: "Workout tracker app voor trainingen en programma's.",
+    year: "2025",
+    tags: ["React", "Firebase", "Mobile-First", "PWA"],
+    longDescription: "Split is een workout-app die trainingen, bodyweight en programma's in een strakke mobiele interface samenbrengt. De ervaring voelt direct en app-achtig aan: een snelle auth-flow, een dashboard voor de dag, duidelijke bottom navigation en schermen voor training, programma's en timers. Alles is ontworpen met een mobile-first aanpak voor een native app-gevoel.",
     highlights: [
-      "Visueel aantrekkelijke productpresentatie met sfeervolle fotografie",
-      "Eenvoudig bestelproces voor catering en afhaal",
-      "Mobielvriendelijk ontwerp afgestemd op het merkidentiteit"
+      "Strakke mobile-first interface met native app-gevoel",
+      "Trainingsschema's, timers en voortgangsoverzicht",
+      "Performance dashboard met streak- en volumetracking"
     ],
-    url: "https://piccobellosnacks.nl/",
-    canEmbed: false,
-    screenshot: "https://www.mkerrie.com/assets/images/piccobello-full.webp",
+    url: "https://split-workout-app.netlify.app/",
+    mockupImage: "/ezwebsite/images/mockups/split-mockup.png",
     images: [
-      "/ezwebsite/images/piccobello/rotterdam-skyline.jpg",
-      "/ezwebsite/images/piccobello/truck-exterior.jpg",
-      "/ezwebsite/images/piccobello/foodtruck-snacks.jpg",
-      "/ezwebsite/images/piccobello/truck-sfeer.jpg",
-      "/ezwebsite/images/piccobello/truck-balie.jpg",
-    ]
-  },
-  {
-    id: 4,
-    title: "Vanguard",
-    category: "Fashion",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
-    description: "Minimalistisch fashion platform met focus op high-end visuals.",
-    year: "2023",
-    tags: ["Shopify", "GSAP", "Editorial Design", "Liquid"],
-    longDescription: "Vanguard is een exclusief fashion platform waar het merk centraal staat boven het product. We ontwierpen een lookbook-gedreven winkelervaring waarbij editorial fotografie op volledig scherm de toon zet. De GSAP-gedreven paginaovergangen creëren een gevoel van een high-end modemagazine dat tot leven komt.",
-    highlights: [
-      "Full-screen editorial lookbook met smooth scroll",
-      "Custom Shopify Liquid theme van nul opgebouwd",
-      "Conversie 38% hoger dan het vorige platform"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=2074&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop",
+      "/ezwebsite/images/split-workout/preview.png",
+      "/ezwebsite/images/split-workout/desktop.png",
     ]
   }
 ];
