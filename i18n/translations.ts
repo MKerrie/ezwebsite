@@ -160,8 +160,8 @@ export const translations = {
   // Projects
   projects: {
     label: { nl: 'Geselecteerde Werken', en: 'Selected Works' },
-    headline1: { nl: 'Premium', en: 'Premium' },
-    headline2: { nl: 'Portfolio.', en: 'Portfolio.' },
+    headline1: { nl: 'Onze', en: 'Our' },
+    headline2: { nl: 'Projecten.', en: 'Projects.' },
     viewAll: { nl: 'Bekijk Alle Projecten', en: 'View All Projects' },
     seoTitle: { nl: 'Projecten | Geselecteerde Werken', en: 'Projects | Selected Works' },
     seoDesc: {
