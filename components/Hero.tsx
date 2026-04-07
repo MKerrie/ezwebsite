@@ -245,15 +245,6 @@ const Hero: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Marquee strip */}
-      <div className="relative z-10 w-full mt-16 md:mt-24 border-y border-slate-100 bg-slate-50/80 backdrop-blur-sm py-4">
-        <Marquee
-          items={["Web Design", "Branding", "UI/UX", "Development", "SEO", "Mobile First", "E-commerce", "WordPress", "React", "Next.js"]}
-          speed={30}
-          separator="✦"
-          className="text-sm md:text-base font-display font-bold uppercase tracking-widest text-slate-300"
-        />
-      </div>
     </section>
   );
 };

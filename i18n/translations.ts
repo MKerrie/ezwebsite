@@ -113,7 +113,7 @@ export const translations = {
         },
       },
     ],
-    seoTitle: { nl: 'Diensten | Web Design, Branding & Support', en: 'Services | Web Design, Branding & Support' },
+    seoTitle: { nl: 'Diensten | Web Design, Development & Support', en: 'Services | Web Design, Development & Support' },
     seoDesc: {
       nl: 'Ontdek hoe ezwebsite jouw online aanwezigheid kan moderniseren met website revamps, support en high-end design.',
       en: 'Discover how ezwebsite can modernize your online presence with website revamps, support and high-end design.',
@@ -165,8 +165,8 @@ export const translations = {
     viewAll: { nl: 'Bekijk Alle Projecten', en: 'View All Projects' },
     seoTitle: { nl: 'Projecten | Geselecteerde Werken', en: 'Projects | Selected Works' },
     seoDesc: {
-      nl: 'Onze meest recente meesterwerken in webdesign en branding.',
-      en: 'Our most recent masterpieces in web design and branding.',
+      nl: 'Onze meest recente meesterwerken in webdesign en development.',
+      en: 'Our most recent masterpieces in web design and development.',
     },
   },
 

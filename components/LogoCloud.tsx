@@ -11,7 +11,7 @@ const LogoCloud: React.FC = () => {
       {/* Skills marquee */}
       <div className="overflow-hidden">
         <Marquee
-          items={["Web Design", "Branding", "UI/UX", "WordPress", "React", "SEO", "E-commerce", "Mobile First", "Hosting", "Support"]}
+          items={["Web Design", "UI/UX", "React", "Next.js", "SEO", "Mobile First", "Hosting", "Support", "Full-Stack", "Firebase"]}
           speed={35}
           separator="✦"
           className="text-2xl md:text-4xl font-display font-bold uppercase tracking-tight text-slate-200"

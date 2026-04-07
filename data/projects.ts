@@ -8,7 +8,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop",
     description: "Professionele website voor een toonaangevend elektrotechnisch installatiebedrijf.",
     year: "2024",
-    tags: ["Webdesign", "Branding", "WordPress", "SEO"],
+    tags: ["Webdesign", "UI/UX", "Responsive", "SEO"],
     longDescription: "YTech Elektrotechniek is een innovatief installatiebedrijf uit Vlaardingen dat woningbouw, utiliteit en renovatieprojecten door heel Nederland bedient. Wij ontwierpen en bouwden een professionele website die hun expertise, projecten en diensten helder en overtuigend presenteert aan aannemers, projectontwikkelaars en opdrachtgevers.",
     highlights: [
       "Heldere dienstenpagina's per sector (woningbouw, utiliteit, renovatie)",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     image: "/ezwebsite/images/piccobello/truck-exterior.jpg",
     description: "Smaakvolle website voor een authentiek snacks- en cateringbedrijf.",
     year: "2024",
-    tags: ["Webdesign", "WordPress", "SEO", "E-commerce"],
+    tags: ["Webdesign", "UI/UX", "SEO", "Responsive"],
     longDescription: "Piccobello Snacks is een authentiek bedrijf gespecialiseerd in ambachtelijke snacks en catering. Wij creëerden een levendige en eetlustige website die hun producten, verhaal en bestelmogelijkheden aantrekkelijk presenteert aan particulieren en horecapartners.",
     highlights: [
       "Visueel aantrekkelijke productpresentatie met sfeervolle fotografie",
@@ -99,7 +99,7 @@ export const projects: Project[] = [
     image: "/ezwebsite/images/king-room-1.png",
     description: "Professionele website voor een gespecialiseerd airconditioning installatiebedrijf.",
     year: "2024",
-    tags: ["Webdesign", "WordPress", "SEO", "Branding"],
+    tags: ["Webdesign", "UI/UX", "SEO", "Responsive"],
     longDescription: "King Airconditioning is een gespecialiseerd bedrijf in de installatie en het onderhoud van airconditioningsystemen. Wij ontwierpen een heldere, professionele website die hun diensten, merken en werkgebied overzichtelijk presenteert aan particulieren en zakelijke klanten.",
     highlights: [
       "Overzichtelijke dienstenpagina's per type installatie",
