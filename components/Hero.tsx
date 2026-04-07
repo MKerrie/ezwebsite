@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100dvh] md:min-h-[110vh] w-full overflow-hidden bg-white flex flex-col items-center pt-32 md:pt-48 pb-0"
+      className="relative w-full overflow-hidden bg-white flex flex-col items-center pt-28 md:pt-40 pb-16 md:pb-24"
     >
       {/* Static gradient background — no JS, no mouse tracking */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
