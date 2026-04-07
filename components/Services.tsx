@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Zap, RefreshCw, Clock, Smartphone, ArrowRight } from 'lucide-react';
+import { Zap, RefreshCw, Clock, Smartphone } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -70,10 +70,6 @@ const Services: React.FC = () => {
                   <p className="text-slate-500 leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
                     {service.description[lang]}
                   </p>
-                  <div className="mt-6 flex items-center gap-2 text-violet-600 group-hover:text-white font-bold text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0">
-                    <span>{t.services.moreInfo[lang]}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
                 </div>
               </div>
             </motion.div>
