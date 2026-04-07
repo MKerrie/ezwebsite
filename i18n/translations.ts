@@ -37,12 +37,12 @@ export const translations = {
   about: {
     label: { nl: 'Over Ons', en: 'About Us' },
     headline1: { nl: 'Geen bureau.', en: 'No agency.' },
-    headline2: { nl: 'Gewoon drie vrienden.', en: 'Just three friends.' },
+    headline2: { nl: 'Gewoon twee vrienden.', en: 'Just two friends.' },
     tagline: { nl: 'Vrienden sinds dag één. Nu bouwen we samen websites.', en: 'Friends since day one. Now we build websites together.' },
     storyTitle: { nl: 'Ons verhaal', en: 'Our story' },
     story1: {
-      nl: 'Drie studenten uit dezelfde klas met één gedeelde obsessie: het internet. Terwijl anderen huiswerk maken, bouwen wij websites.',
-      en: 'Three students from the same class with one shared obsession: the internet. While others do homework, we build websites.',
+      nl: 'Twee studenten uit dezelfde klas met één gedeelde obsessie: het internet. Terwijl anderen huiswerk maken, bouwen wij websites.',
+      en: 'Two students from the same class with one shared obsession: the internet. While others do homework, we build websites.',
     },
     story2: {
       nl: 'Het begon met kleine projectjes voor vrienden en familie. "Kun je even een site maken?" werd al snel "Jullie zijn echt goed hierin." Toen wisten we: dit is wat we willen doen.',
@@ -70,10 +70,10 @@ export const translations = {
       nl: 'We doen dit niet voor het geld. We doen dit omdat we het vet vinden. En dat zie je terug in elk pixel.',
       en: 'We don\'t do this for the money. We do this because we love it. And you can see that in every pixel.',
     },
-    seoTitle: { nl: 'Over Ons | ezwebsite - Drie Vrienden, Één Missie', en: 'About Us | ezwebsite - Three Friends, One Mission' },
+    seoTitle: { nl: 'Over Ons | ezwebsite - Twee Vrienden, Één Missie', en: 'About Us | ezwebsite - Two Friends, One Mission' },
     seoDesc: {
-      nl: 'Ahmad, Kerim en Nawdar. Drie vrienden die samen websites bouwen waar je blij van wordt.',
-      en: 'Ahmad, Kerim and Nawdar. Three friends building websites that make you happy.',
+      nl: 'Twee vrienden die samen websites bouwen waar je blij van wordt.',
+      en: 'Two friends building websites that make you happy.',
     },
   },
 

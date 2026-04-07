@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
             {[
               { value: "24/7", label: t.hero.stats.available[lang] },
               { value: "100%", label: t.hero.stats.custom[lang] },
-              { value: "3", label: t.hero.stats.creatives[lang] },
+              { value: "2", label: t.hero.stats.creatives[lang] },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-2xl md:text-4xl font-display font-bold text-slate-900">{stat.value}</div>
