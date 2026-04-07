@@ -261,7 +261,7 @@ export const translations = {
     nextProject: { nl: 'Volgend project', en: 'Next project' },
   },
 
-  // Project data — order must match data/projects.ts: YTech, AhmadFlex, Piccobello, Yume Ramen, King Airco, Split Workout
+  // Project data — order must match data/projects.ts: YTech, AhmadFlex, Piccobello, King Airco, Yume Ramen, Split Workout
   projectData: [
     {
       description: {
@@ -331,28 +331,6 @@ export const translations = {
     },
     {
       description: {
-        nl: 'Japanse ramen delivery-app met een unieke visuele stijl.',
-        en: 'Japanese ramen delivery app with a unique visual style.',
-      },
-      longDescription: {
-        nl: 'Yume Ramen is een moderne delivery experience voor een ramenconcept, gebouwd met React en Firebase. De flow voelt direct en app-achtig aan: inloggen als klant, gerechten ontdekken, toppings kiezen, afrekenen en de bestelling live volgen via Firestore-statusupdates. De visuele stijl en interacties zijn bewust sfeervol en duidelijk gehouden, zodat de landing, product customizer, cart en orderstatus samen één rustige maar karaktervolle ervaring vormen.',
-        en: 'Yume Ramen is a modern delivery experience for a ramen concept, built with React and Firebase. The flow feels direct and app-like: log in as a customer, discover dishes, choose toppings, checkout and track your order live via Firestore status updates. The visual style and interactions are deliberately atmospheric and clear, so that the landing, product customizer, cart and order status together form one calm yet characterful experience.',
-      },
-      highlights: {
-        nl: [
-          'Realtime orderstatus via Firestore-statusupdates',
-          'Rollen-systeem: klant, chef, bezorger en admin',
-          'Sfeervol Japans design met illustraties en animaties',
-        ],
-        en: [
-          'Real-time order status via Firestore updates',
-          'Role system: customer, chef, delivery and admin',
-          'Atmospheric Japanese design with illustrations and animations',
-        ],
-      },
-    },
-    {
-      description: {
         nl: 'Professionele website voor een gespecialiseerd airconditioning installatiebedrijf.',
         en: 'Professional website for a specialized air conditioning installation company.',
       },
@@ -370,6 +348,28 @@ export const translations = {
           'Clear service pages per installation type',
           'SEO-optimized for local search queries',
           'Fast loading times and mobile-friendly design',
+        ],
+      },
+    },
+    {
+      description: {
+        nl: 'Japanse ramen delivery-app met een unieke visuele stijl.',
+        en: 'Japanese ramen delivery app with a unique visual style.',
+      },
+      longDescription: {
+        nl: 'Yume Ramen is een moderne delivery experience voor een ramenconcept, gebouwd met React en Firebase. De flow voelt direct en app-achtig aan: inloggen als klant, gerechten ontdekken, toppings kiezen, afrekenen en de bestelling live volgen via Firestore-statusupdates. De visuele stijl en interacties zijn bewust sfeervol en duidelijk gehouden, zodat de landing, product customizer, cart en orderstatus samen één rustige maar karaktervolle ervaring vormen.',
+        en: 'Yume Ramen is a modern delivery experience for a ramen concept, built with React and Firebase. The flow feels direct and app-like: log in as a customer, discover dishes, choose toppings, checkout and track your order live via Firestore status updates. The visual style and interactions are deliberately atmospheric and clear, so that the landing, product customizer, cart and order status together form one calm yet characterful experience.',
+      },
+      highlights: {
+        nl: [
+          'Realtime orderstatus via Firestore-statusupdates',
+          'Rollen-systeem: klant, chef, bezorger en admin',
+          'Sfeervol Japans design met illustraties en animaties',
+        ],
+        en: [
+          'Real-time order status via Firestore updates',
+          'Role system: customer, chef, delivery and admin',
+          'Atmospheric Japanese design with illustrations and animations',
         ],
       },
     },

@@ -73,27 +73,6 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Yume Ramen",
-    category: "Web App",
-    image: "/ezwebsite/images/yume-ramen/preview.png",
-    description: "Japanse ramen delivery-app met een unieke visuele stijl.",
-    year: "2025",
-    tags: ["React", "Firebase", "Vite", "Full-Stack"],
-    longDescription: "Yume Ramen is een moderne delivery experience voor een ramenconcept, gebouwd met React en Firebase. De flow voelt direct en app-achtig aan: inloggen als klant, gerechten ontdekken, toppings kiezen, afrekenen en de bestelling live volgen via Firestore-statusupdates. De visuele stijl en interacties zijn bewust sfeervol en duidelijk gehouden, zodat de landing, product customizer, cart en orderstatus samen één rustige maar karaktervolle ervaring vormen.",
-    highlights: [
-      "Realtime orderstatus via Firestore-statusupdates",
-      "Rollen-systeem: klant, chef, bezorger en admin",
-      "Sfeervol Japans design met illustraties en animaties"
-    ],
-    url: "https://yume-ramen.netlify.app/login",
-    mockupImage: "/ezwebsite/images/mockups/yume-mockup.png",
-    images: [
-      "/ezwebsite/images/yume-ramen/preview.png",
-      "/ezwebsite/images/yume-ramen/desktop.png",
-    ]
-  },
-  {
-    id: 5,
     title: "King Airco",
     category: "Webdesign",
     image: "/ezwebsite/images/king-room-1.png",
@@ -112,6 +91,27 @@ export const projects: Project[] = [
       "/ezwebsite/images/king-room-1.png",
       "/ezwebsite/images/king-buitenunit.webp",
       "/ezwebsite/images/king-installatie-1.webp",
+    ]
+  },
+  {
+    id: 5,
+    title: "Yume Ramen",
+    category: "Web App",
+    image: "/ezwebsite/images/yume-ramen/preview.png",
+    description: "Japanse ramen delivery-app met een unieke visuele stijl.",
+    year: "2025",
+    tags: ["React", "Firebase", "Vite", "Full-Stack"],
+    longDescription: "Yume Ramen is een moderne delivery experience voor een ramenconcept, gebouwd met React en Firebase. De flow voelt direct en app-achtig aan: inloggen als klant, gerechten ontdekken, toppings kiezen, afrekenen en de bestelling live volgen via Firestore-statusupdates. De visuele stijl en interacties zijn bewust sfeervol en duidelijk gehouden, zodat de landing, product customizer, cart en orderstatus samen één rustige maar karaktervolle ervaring vormen.",
+    highlights: [
+      "Realtime orderstatus via Firestore-statusupdates",
+      "Rollen-systeem: klant, chef, bezorger en admin",
+      "Sfeervol Japans design met illustraties en animaties"
+    ],
+    url: "https://yume-ramen.netlify.app/login",
+    mockupImage: "/ezwebsite/images/mockups/yume-mockup.png",
+    images: [
+      "/ezwebsite/images/yume-ramen/preview.png",
+      "/ezwebsite/images/yume-ramen/desktop.png",
     ]
   },
   {
