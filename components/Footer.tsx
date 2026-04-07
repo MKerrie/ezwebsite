@@ -89,10 +89,7 @@ const Footer: React.FC = () => {
             <Logo light />
           </div>
           <div className="text-white/30 text-sm">
-            {t.footer.madeBy[lang]}{' '}
-            <a href="https://ahmadarab.nl" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-violet-400 transition-colors">Ahmad</a>,{' '}
-            <a href="https://mkerrie.com" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-violet-400 transition-colors">Kerim</a> &{' '}
-            <a href="https://nawdar.nl" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-violet-400 transition-colors">Nawdar</a>
+            &copy; {new Date().getFullYear()} ezwebsite. {lang === 'nl' ? 'Alle rechten voorbehouden.' : 'All rights reserved.'}
           </div>
         </div>
       </div>
