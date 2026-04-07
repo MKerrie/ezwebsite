@@ -39,11 +39,11 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="md:col-span-8 relative rounded-3xl overflow-hidden group"
           >
-            <div className="aspect-[4/3] md:aspect-[16/10]">
+            <div className="relative aspect-[4/3] md:aspect-auto md:h-full min-h-[300px]">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
                 alt="ezwebsite team working"
-                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 right-6 md:right-10">
