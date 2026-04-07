@@ -1,89 +1,8 @@
-import React, { useRef, useEffect } from 'react';
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useSEO } from '../hooks/useSEO';
 import { Play, Sparkles } from 'lucide-react';
-import Marquee from './Marquee';
 import { useLanguage } from '../i18n/LanguageContext';
-
-// --- Animated Gradient Mesh ---
-const GradientMesh = () => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  useEffect(() => {
-    const handleMove = (e: MouseEvent) => {
-      mouseX.set((e.clientX / window.innerWidth - 0.5) * 100);
-      mouseY.set((e.clientY / window.innerHeight - 0.5) * 100);
-    };
-    window.addEventListener('mousemove', handleMove);
-    return () => window.removeEventListener('mousemove', handleMove);
-  }, []);
-
-  return (
-    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-      {/* Primary orb */}
-      <motion.div
-        style={{ x: useSpring(mouseX, { stiffness: 30, damping: 20 }), y: useSpring(mouseY, { stiffness: 30, damping: 20 }) }}
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[-20%] left-[20%] w-[60vw] h-[60vw] bg-violet-500/20 blur-[120px] rounded-full"
-      />
-      {/* Secondary orb */}
-      <motion.div
-        animate={{ scale: [1, 1.15, 1], x: [0, 30, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[10%] right-[-10%] w-[40vw] h-[40vw] bg-purple-400/15 blur-[100px] rounded-full"
-      />
-      {/* Tertiary accent */}
-      <motion.div
-        animate={{ scale: [1, 1.3, 1], y: [0, -20, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-[10%] left-[-5%] w-[30vw] h-[30vw] bg-indigo-400/10 blur-[80px] rounded-full"
-      />
-      {/* Dot grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle,#00000008_1px,transparent_1px)] bg-[size:32px_32px] opacity-60" />
-    </div>
-  );
-};
-
-// --- Staggered Text Component ---
-const StaggeredText = ({ text, className, delayStart = 0 }: { text: string, className?: string, delayStart?: number }) => {
-  return (
-    <span className={`inline-block overflow-hidden ${className}`}>
-      <span className="inline-block">
-        {text.split('').map((char, index) => (
-          <motion.span
-            key={index}
-            className="inline-block"
-            initial={{ y: "110%", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.7,
-              delay: delayStart + index * 0.04,
-              ease: [0.33, 1, 0.68, 1],
-            }}
-          >
-            {char === ' ' ? '\u00A0' : char}
-          </motion.span>
-        ))}
-      </span>
-    </span>
-  );
-};
-
-// --- Animated Counter ---
-const AnimatedCounter = ({ value, suffix = "" }: { value: string, suffix?: string }) => {
-  return (
-    <motion.span
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 1.4 }}
-      className="font-display font-bold"
-    >
-      {value}{suffix}
-    </motion.span>
-  );
-};
 
 const Hero: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -111,7 +30,13 @@ const Hero: React.FC = () => {
       ref={ref}
       className="relative min-h-[100dvh] md:min-h-[110vh] w-full overflow-hidden bg-white flex flex-col items-center pt-32 md:pt-48 pb-0"
     >
-      <GradientMesh />
+      {/* Static gradient background — no JS, no mouse tracking */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-20%] left-[20%] w-[60vw] h-[60vw] bg-violet-500/20 blur-[120px] rounded-full" />
+        <div className="absolute top-[10%] right-[-10%] w-[40vw] h-[40vw] bg-purple-400/15 blur-[100px] rounded-full" />
+        <div className="absolute bottom-[10%] left-[-5%] w-[30vw] h-[30vw] bg-indigo-400/10 blur-[80px] rounded-full" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle,#00000008_1px,transparent_1px)] bg-[size:32px_32px] opacity-60" />
+      </div>
 
       {/* HERO CONTENT */}
       <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col items-center">
@@ -119,10 +44,10 @@ const Hero: React.FC = () => {
 
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-200 bg-violet-50/80 backdrop-blur-md mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-200 bg-violet-50/80 mb-8"
           >
             <Sparkles className="w-3.5 h-3.5 text-violet-600" />
             <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-violet-700">
@@ -130,21 +55,31 @@ const Hero: React.FC = () => {
             </span>
           </motion.div>
 
-          {/* HEADLINE */}
+          {/* HEADLINE — single block animation instead of per-letter */}
           <div className="relative mb-6 md:mb-8 flex flex-col items-center w-full">
-            <div className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-slate-900 uppercase overflow-hidden">
-              <StaggeredText text={t.hero.headline1[lang]} delayStart={0} />
-            </div>
-            <div className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-purple-500 to-violet-700 uppercase pb-2 md:pb-4 overflow-hidden">
-              <StaggeredText text={t.hero.headline2[lang]} delayStart={0.3} />
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-slate-900 uppercase"
+            >
+              {t.hero.headline1[lang]}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="text-[15vw] md:text-[9vw] font-display font-bold leading-[0.8] md:leading-[0.85] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-violet-600 via-purple-500 to-violet-700 uppercase pb-2 md:pb-4"
+            >
+              {t.hero.headline2[lang]}
+            </motion.div>
           </div>
 
           {/* Subtext */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
             className="text-base md:text-xl text-slate-500 max-w-xl leading-relaxed font-light mb-8 md:mb-10 px-4"
           >
             {t.hero.subtext[lang]} <span className="text-slate-900 font-medium">{t.hero.subtextBold[lang]}</span>.
@@ -154,7 +89,7 @@ const Hero: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 0.55 }}
             className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 w-full sm:w-auto px-6 sm:px-0"
           >
             <a
@@ -180,7 +115,7 @@ const Hero: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.3, duration: 0.8 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
             className="flex items-center gap-8 md:gap-16 mt-12 md:mt-16"
           >
             {[
@@ -197,13 +132,12 @@ const Hero: React.FC = () => {
 
           {/* Browser mockup */}
           <motion.div
-            initial={{ opacity: 0, y: 60, rotateX: 15 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ delay: 1.2, duration: 1.2, type: "spring" }}
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="mt-16 md:mt-24 w-full max-w-5xl relative px-2 md:px-0"
-            style={{ perspective: '1000px' }}
           >
-            <div className="relative bg-white/60 backdrop-blur-2xl border border-slate-200/80 rounded-t-2xl md:rounded-t-[2rem] p-3 md:p-5 shadow-[0_20px_80px_-20px_rgba(124,58,237,0.15)] overflow-hidden">
+            <div className="relative bg-white/60 border border-slate-200/80 rounded-t-2xl md:rounded-t-[2rem] p-3 md:p-5 shadow-[0_20px_80px_-20px_rgba(124,58,237,0.15)] overflow-hidden">
               {/* Window controls */}
               <div className="flex items-center justify-between mb-3 md:mb-4 px-1 md:px-2">
                 <div className="flex gap-1.5 md:gap-2">
@@ -222,20 +156,17 @@ const Hero: React.FC = () => {
                 <img
                   src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop"
                   alt="Digital workspace"
-                  className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover opacity-90"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                {/* Floating glass card */}
-                <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute bottom-4 left-4 md:bottom-10 md:left-10 bg-white/10 backdrop-blur-xl border border-white/20 p-3 md:p-5 rounded-xl md:rounded-2xl"
-                >
+                {/* Static glass card — no infinite animation */}
+                <div className="absolute bottom-4 left-4 md:bottom-10 md:left-10 bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-5 rounded-xl md:rounded-2xl">
                   <div className="h-1.5 md:h-2 w-10 md:w-14 bg-violet-500 rounded-full mb-2 md:mb-3" />
                   <div className="h-1.5 md:h-2 w-full bg-white/20 rounded-full mb-1.5 md:mb-2" />
                   <div className="h-1.5 md:h-2 w-2/3 bg-white/20 rounded-full" />
-                </motion.div>
+                </div>
               </div>
             </div>
 
