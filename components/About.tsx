@@ -47,13 +47,6 @@ const About: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 right-6 md:right-10">
-                <div className="flex items-center gap-3 mb-4">
-                  {["Kerim", "Nawdar"].map((name) => (
-                    <div key={name} className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20">
-                      <span className="text-white text-xs md:text-sm font-bold">{name}</span>
-                    </div>
-                  ))}
-                </div>
                 <p className="text-white/60 text-sm md:text-base max-w-md">
                   {t.about.tagline[lang]}
                 </p>
