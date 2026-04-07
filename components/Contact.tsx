@@ -116,7 +116,7 @@ const Contact: React.FC = () => {
                 </div>
               </a>
 
-              <a href="tel:0684854767" className="flex items-center space-x-6 group cursor-pointer w-fit max-w-full">
+              <a href="https://wa.me/31684854767" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-6 group cursor-pointer w-fit max-w-full">
                 <motion.div
                   whileHover={{ rotate: 15, scale: 1.1 }}
                   className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 group-hover:bg-violet-600 group-hover:text-white group-hover:border-violet-600 transition-all duration-300 shadow-md"
