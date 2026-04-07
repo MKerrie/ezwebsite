@@ -48,18 +48,37 @@ const Contact: React.FC = () => {
 
   useSEO(ref, t.contact.seoTitle[lang], t.contact.seoDesc[lang]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
       setFormState('submitting');
 
-      // Simulate API call
-      setTimeout(() => {
-          setFormState('success');
-          setFormData({ name: '', company: '', email: '', budget: '', message: '' });
+      try {
+          const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                  access_key: 'fb61ba8d-3cee-4ac6-861d-d5cf96540079',
+                  subject: `Nieuw bericht van ${formData.name}${formData.company ? ` (${formData.company})` : ''}`,
+                  from_name: formData.name,
+                  name: formData.name,
+                  email: formData.email,
+                  company: formData.company,
+                  budget: formData.budget,
+                  message: formData.message,
+              }),
+          });
 
-          // Reset after 5 seconds
-          setTimeout(() => setFormState('idle'), 5000);
-      }, 1500);
+          const data = await response.json();
+          if (data.success) {
+              setFormState('success');
+              setFormData({ name: '', company: '', email: '', budget: '', message: '' });
+              setTimeout(() => setFormState('idle'), 5000);
+          } else {
+              setFormState('idle');
+          }
+      } catch {
+          setFormState('idle');
+      }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -94,6 +113,19 @@ const Contact: React.FC = () => {
                 <div className="overflow-hidden">
                   <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{t.contact.emailLabel[lang]}</p>
                   <p className="font-display font-bold text-lg md:text-2xl group-hover:text-violet-500 transition-colors truncate">info@ezwebsite.nl</p>
+                </div>
+              </a>
+
+              <a href="tel:0684854767" className="flex items-center space-x-6 group cursor-pointer w-fit max-w-full">
+                <motion.div
+                  whileHover={{ rotate: 15, scale: 1.1 }}
+                  className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-900 group-hover:bg-violet-600 group-hover:text-white group-hover:border-violet-600 transition-all duration-300 shadow-md"
+                >
+                  <Phone className="w-5 h-5" />
+                </motion.div>
+                <div className="overflow-hidden">
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{lang === 'nl' ? 'Telefoon' : 'Phone'}</p>
+                  <p className="font-display font-bold text-lg md:text-2xl group-hover:text-violet-500 transition-colors truncate">06 848 547 67</p>
                 </div>
               </a>
 
