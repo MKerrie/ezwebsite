@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Dev/debug screenshots at repo root (keep project images in subfolders)
+/*.png
+
+# Playwright & MCP cache
+.playwright-mcp/
+.mcp.json
